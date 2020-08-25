@@ -1,37 +1,42 @@
 //banner animation
-const runButton =document.getElementById('runAway');
 const mainTitle = document.getElementById('main-title');
 const creditcard = document.getElementById('creditcard');
-const btnAction =document.querySelector('.btn-action');
-const btnSignup = document.querySelector('#btn-signup');
+const btnAction = document.querySelector('.btn-action');
 const check = document.getElementById('check');
-
-btnSignup.style.display="none";
-check.style.display="none";
-runButton.addEventListener('mouseover',()=>{
-runButton.classList.add('hide');
+const showcase = document.querySelector('.showcase');
+const subslist = document.querySelector('.promote');
+check.style.display = "none";
+subslist.style.display = "";
+subslist.style.opacity = "0";
 creditcard.classList.add('show');
-mainTitle.innerHTML="Opps, looks like you forgot to cancel";
-setTimeout(()=>{runButton.style.visibility="hidden", creditcard.style.display="none", check.style.display=""}, 4000);
-btnSignup.style.display="";
-setTimeout(()=>{mainTitle.innerHTML="Keep track of your subscriptions today", btnSignup.classList.add('showup')}, 3000);
-});
 
 
-
-
- //susbs list animation
-
-
-    document.addEventListener('aos:in:showsubs', () => {
- const subsListAnimation=()=>{
-    const subsListAnimation = document.querySelectorAll('#subs-display-animation li');
-const promote = document.querySelector('.promote');
-   subsListAnimation.forEach((item)=>{
-       item.classList.add('activate-sub-animation');
-   });
+const pageLoad = () => {
+    mainTitle.innerHTML = "Opps, looks like you forgot to cancel";
+    //susbs list animation
+    const subsListAnimation = () => {
+        subslist.style.opacity = "1";
+        const subsListAnimation = document.querySelectorAll('#subs-display-animation li');
+        const promote = document.querySelector('.promote');
+        subsListAnimation.forEach((item) => {
+            item.classList.add('activate-sub-animation');
+        });
+    };
+    setTimeout(() => {
+        subsListAnimation()
+    }, 3000);
+    setTimeout(() => {
+        creditcard.style.display = "none"
+    }, 4100);
+    setTimeout(() => {
+        mainTitle.innerHTML = "Keep track of your subscriptions today", clearList(), check.style.display = ""
+    }, 8000);
 };
- subsListAnimation();
-});
+
+const clearList = () => {
+    subslist.style.display = "";
+    subslist.style.opacity = "0"
+}
+pageLoad();
 
 
