@@ -1,1 +1,291 @@
 // Specific CSS for your home-page
+
+.showcase {
+    width: 100%;
+    height: 600px;
+    background-color: #F7F7F7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+.btn-cancel {
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #3D5AF1;
+    padding: 20px;
+    border-radius: 30px;
+    display: inline-block;
+    border: none;
+    transition: 1.2s ease-in-out;
+}
+
+.showcase-content h1 {
+    font-size: 36px;
+}
+
+
+.showcase-content{
+  margin-top: -30px;
+}
+
+.btn {
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #3D5AF1;
+    padding: 20px;
+    border-radius: 30px;
+    opacity: 0;
+    transition: 3s ease-in-out;
+    width: 50%;
+    margin: 5px auto;
+}
+
+
+#creditcard {
+    height: 150px;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    margin-bottom: 4px;
+}
+
+#check{
+  height: 130px;
+}
+
+.hide {
+    opacity: 0;
+    transform: translateY(70px);
+    pointer-events: none;
+}
+
+.show {
+    opacity: 1 !important;
+    transform: translateY(10px);
+}
+
+.showup {
+    opacity: 1 !important;
+    transform: translateY(-50px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.sectionsubs {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.subscription-item {
+    height: 90px;
+    border-radius: 8px;
+    background: #3d5af1;
+    background: linear-gradient(90deg, rgba(82, 158, 231, 1) 0%, rgba(61, 90, 241, 1) 41%);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+}
+
+.sub-logo {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    height: 100%;
+    width: 70px;
+    background-size: cover;
+    background-position: center;
+}
+
+.sub-info {
+    padding-left: 24px;
+}
+
+
+
+.margin-sm {
+    margin: 4px;
+}
+
+.sub-reg-cost {
+    height: 100%;
+    padding-left: 36px;
+    margin-left: auto;
+}
+
+
+#subs-display-animation {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+
+#subs-display-animation li {
+    float: left;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    margin: 4px 0;
+}
+
+.activate-sub-animation {
+    animation: fadeIn 1s ease-in-out both;
+}
+
+#subs-display-animation li:nth-child(2) {
+    animation-delay: 0.5s;
+
+}
+
+#subs-display-animation li:nth-child(3) {
+    animation-delay: 1s;
+}
+
+#subs-display-animation li:nth-child(4) {
+    animation-delay: 1.5s;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+#subs-display-animation li:nth-child(5) {
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -20%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+
+.promote {
+    width: 100%;
+    padding: 8px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.promote h3{
+  font-size: 20px;
+}
+
+.grouplistpromo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.grouplistpromo ul {
+    padding: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+#notification-box {
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    perspective: 40px;
+    height: 100%;
+     background: #3d5af1;
+    background: linear-gradient(90deg, rgba(82, 158, 231, 1) 0%, rgba(61, 90, 241, 1) 41%);
+    padding: 18px 30px;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    margin: 18px;
+}
+
+.notification-boxes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notif-cirle{
+    border-radius: 50%;
+    background-color: #F90201;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top:-30px;
+    right: -23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+
+.alert-message h1{
+    margin-bottom: 0;
+}
+
+#notification-box .sub-logo{
+    height: 80px;
+    width: 80px;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
