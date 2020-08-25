@@ -6,13 +6,12 @@
     background-color: $light-gray;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     overflow: hidden;
     position: relative;
 }
-
 
 
 .showcase-content h1 {
@@ -21,7 +20,12 @@
 
 
 .showcase-content{
-  margin-top: -30px;
+  margin-top: 150px;
+}
+
+
+#creditcard.show-card{
+  opacity: 1;
 }
 
 
@@ -37,16 +41,7 @@
   height: 130px;
 }
 
-.hide {
-    opacity: 0;
-    transform: translateY(70px);
-    pointer-events: none;
-}
 
-.show {
-    opacity: 1 !important;
-    transform: translateY(10px);
-}
 
 .showup {
     opacity: 1 !important;
@@ -72,8 +67,8 @@
 .subscription-item {
     height: 90px;
     border-radius: 8px;
-    background: #3d5af1;
-    background: linear-gradient(90deg, rgba(82, 158, 231, 1) 0%, rgba(61, 90, 241, 1) 41%);
+    background: rgb(223,180,244);
+    background: linear-gradient(90deg, rgba(223,180,244,1) 4%, rgba(199,136,229,1) 33%);
     padding: 16px 24px;
     display: flex;
     align-items: center;
