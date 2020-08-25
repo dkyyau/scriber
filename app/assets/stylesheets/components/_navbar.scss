@@ -14,12 +14,13 @@
 .navbar-brand {
   display: flex;
   align-items: center;
+  opacity: 1;
   h1 {
     margin: 0;
     font-size: 36px;
     font-weight: bolder;
     color: black;
-    opacity: 0.5;
+    opacity: 0.7;
   }
 }
 

@@ -7,7 +7,7 @@ const subslist = document.querySelector('.promote');
 check.style.display = "none";
 subslist.style.display = "";
 subslist.style.opacity = "0";
-creditcard.classList.add('show');
+creditcard.classList.add('show-card');
 
 
 const pageLoad = () => {
@@ -33,8 +33,8 @@ const pageLoad = () => {
 };
 
 const clearList = () => {
-    subslist.style.display = "";
-    subslist.style.opacity = "0"
+    subslist.style.display = "none";
+    subslist.visibility = "hidden";
 }
 pageLoad();
 
