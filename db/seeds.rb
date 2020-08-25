@@ -5,4 +5,79 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user_subscription = user_subscription.create ([{ subscription: 'Netflix'}], [{ subscription: 'Amazon'}] )
+
+puts "Creating users..."
+
+ User.create(
+     email: "simeo@simeo.co.uk",
+     password: 123456,
+     first_name: "Simeo",
+     last_name: "Russo"
+ )
+
+ User.create(
+     email: "shreya@shreya.co.uk",
+     password: 123456,
+     first_name: "Shreya",
+     last_name: "Gupta"
+ )
+
+ User.create(
+     email: "dorothy@dorothy.co.uk",
+     password: 123456,
+     first_name: "Dorothy",
+     last_name: "Yau"
+ )
+
+ User.create(
+     email: "david@david.co.uk",
+     password: 123456,
+     first_name: "David",
+     last_name: "Magueijo"
+ )
+
+ puts "Creating categories..."
+
+Category.create(name: "TV")
+Category.create(name: "Film")
+Category.create(name: "Music")
+Category.create(name: "Phone bills")
+Category.create(name: "Gym membership")
+
+puts "Creating subscriptions..."
+
+Subscription.create!(
+  name: "Netflix",
+  description: "A movies/tv show streaming service",
+  price: 14.99,
+  category: Category.first
+  )
+
+Subscription.create(
+  name: "Spotify",
+  description: "A music streaming service",
+  price: 10.99,
+  category: Category.first
+  )
+
+Subscription.create(
+  name: "Playstation Now",
+  description: "A videogames streaming service",
+  price: 7.99,
+  category: Category.first
+  )
+
+Subscription.create(
+  name: "Crunchyroll",
+  description: "A anime streaming service",
+  price: 4.99,
+  category: Category.first
+  )
+
+puts "Creating User Subscriptions..."
+
+UserSubscription.create(cost: 4.99, subscription: Subscription.first, user: User.first)
+
+
+
+puts "Finished!"
