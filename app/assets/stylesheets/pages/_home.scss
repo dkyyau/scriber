@@ -13,18 +13,7 @@
     position: relative;
 }
 
-.btn-cancel {
-    position: relative;
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #3D5AF1;
-    padding: 20px;
-    border-radius: 30px;
-    display: inline-block;
-    border: none;
-    transition: 1.2s ease-in-out;
-}
+
 
 .showcase-content h1 {
     font-size: 36px;
@@ -35,19 +24,6 @@
   margin-top: -30px;
 }
 
-.btn {
-    display: block;
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #3D5AF1;
-    padding: 20px;
-    border-radius: 30px;
-    opacity: 0;
-    transition: 3s ease-in-out;
-    width: 50%;
-    margin: 5px auto;
-}
 
 
 #creditcard {
@@ -175,12 +151,11 @@
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translate3d(0, -20%, 0);
+
     }
 
     to {
         opacity: 1;
-        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -188,14 +163,17 @@
 
 .promote {
     width: 100%;
-    padding: 8px;
     margin: 0 auto;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 80vh;
+    position: absolute;
+    top:70px;
+    left:0;
+    background-color: #F7F7F7;
 }
 
 .promote h3{
