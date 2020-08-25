@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user_subscription = user_subscription.create ([{ subscription: 'Netflix'}], [{ subscription: 'Amazon'}] )
