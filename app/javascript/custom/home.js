@@ -1,7 +1,6 @@
 //banner animation
 const mainTitle = document.getElementById('main-title');
 const creditcard = document.getElementById('creditcard');
-const btnAction = document.querySelector('.btn-action');
 const check = document.getElementById('check');
 const showcase = document.querySelector('.showcase');
 const subslist = document.querySelector('.promote');
