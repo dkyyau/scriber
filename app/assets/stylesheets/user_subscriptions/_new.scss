@@ -7,9 +7,12 @@
 }
 
 .btn-primary {
-    color: #212529;
     background-color: #C788E5;
-    border-color: #C788E5;
+    border: 1px solid #C788E5;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.8;
     width: 100%;
 }
 
