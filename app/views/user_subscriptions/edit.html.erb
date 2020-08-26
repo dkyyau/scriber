@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-8">
       <div class="edit-subscription-container">
-        <h1>Edit your <%=@user_subscription.name %></h1>
+        <h1>Edit <%=@user_subscription.subscription.name %></h1>
         <%= simple_form_for(@user_subscription) do |f| %>
          <%= f.association :subscription %>
           <%= f.input :start_date, as: :date, html5: true %>
