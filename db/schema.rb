@@ -10,10 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_153920) do
+ActiveRecord::Schema.define(version: 2020_08_26_153532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "billing_plans", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -49,7 +53,8 @@ ActiveRecord::Schema.define(version: 2020_08_25_153920) do
     t.decimal "cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "billing_period"
+    t.bigint "billing_plan_id", null: false
+    t.index ["billing_plan_id"], name: "index_user_subscriptions_on_billing_plan_id"
     t.index ["subscription_id"], name: "index_user_subscriptions_on_subscription_id"
     t.index ["user_id"], name: "index_user_subscriptions_on_user_id"
   end
@@ -70,6 +75,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_153920) do
 
   add_foreign_key "reminders", "user_subscriptions"
   add_foreign_key "subscriptions", "categories"
+  add_foreign_key "user_subscriptions", "billing_plans"
   add_foreign_key "user_subscriptions", "subscriptions"
   add_foreign_key "user_subscriptions", "users"
 end
