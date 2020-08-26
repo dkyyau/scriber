@@ -4,11 +4,13 @@ const creditcard = document.getElementById('creditcard');
 const check = document.getElementById('check');
 const showcase = document.querySelector('.showcase');
 const subslist = document.querySelector('.promote');
+const navHome = document.querySelector('.navbar-brand');
 
 check.style.display = "none";
 subslist.style.display = "";
 subslist.style.opacity = "0";
 creditcard.classList.add('show-card');
+
 
 const pageLoad = () => {
   mainTitle.innerHTML = "Never forget to cancel a subscription";
@@ -38,4 +40,6 @@ const clearList = () => {
 }
 pageLoad();
 
-
+navHome.addEventListener('click', function refreshPage(){
+    window.location.reload();
+}  );
