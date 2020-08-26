@@ -5,8 +5,10 @@
         <h1 class="my-3 text-center">Add your subscription</h1>
         <%= simple_form_for(@user_subscription) do |f| %>
          <%= f.association :subscription %>
+         <div class="form-row">
           <%= f.input :start_date, as: :date, html5: true %>
           <%= f.input :end_date, as: :date, html5: true %>
+       </div>
           <%= f.input :payment_date, as: :date, html5: true %>
           <%= f.input :cost %>
           <%= f.input :billing_period %>
