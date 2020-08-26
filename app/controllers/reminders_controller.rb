@@ -21,13 +21,13 @@ class RemindersController < ApplicationController
   def update
     @reminder = Reminder.find(params[:id])
     @reminder.update(reminder_params)
-    redirect_to user_subscription_path{@reminder.user_subscription)
+    redirect_to user_subscription_path(@reminder.user_subscription)
   end
 
   def destroy
     @reminder = Reminder.find(params[:id])
     @reminder.destroy
-    redirect_to user_subscription_path{@reminder.user_subscription)
+    redirect_to user_subscription_path(@reminder.user_subscription)
   end
 
   private
