@@ -1,13 +1,18 @@
-.form-container {
+.form-login {
   background-color: white;
-  width: 400px;
-  margin: 24px auto;
   border: 1px solid lightgrey;
-  text-align: center;
-  padding: 32px;
   border-radius: 4px;
-}
-
-.form-inputs {
-  text-align: left;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  padding: 24px 32px;
+  margin: 24px 0;
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 16px;
+  }
 }
