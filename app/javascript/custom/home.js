@@ -5,6 +5,8 @@ const check = document.getElementById('check');
 const showcase = document.querySelector('.showcase');
 const subslist = document.querySelector('.promote');
 const navHome = document.querySelector('.navbar-brand');
+const homeLink = document.querySelector('.home-link');
+
 
 check.style.display = "none";
 subslist.style.display = "";
@@ -38,8 +40,14 @@ const clearList = () => {
   subslist.style.display = "none";
   subslist.visibility = "hidden";
 }
-pageLoad();
 
-navHome.addEventListener('click', function refreshPage(){
-    window.location.reload();
-}  );
+
+window.onload = function() {
+  pageLoad();
+};
+
+setTimeout(function() {
+  location.reload();
+}, 17000);
+
+
