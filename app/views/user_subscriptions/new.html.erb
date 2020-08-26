@@ -5,12 +5,19 @@
         <h1 class="my-3 text-center">Add your subscription</h1>
         <%= simple_form_for(@user_subscription) do |f| %>
          <%= f.association :subscription %>
-          <%= f.input :start_date, as: :date, html5: true %>
-          <%= f.input :end_date, as: :date, html5: true, label: 'End date  *if applicable'  %>
-          <%= f.input :payment_date, as: :date, html5: true %>
-          <%= f.input :cost %>
-          <%= f.input :billing_period %>
+         <div class="form-row">
+          <div class="col">
+            <%= f.input :start_date, as: :date, html5: true %>
+          </div>
+          <div class="col">
+            <%= f.input :end_date, as: :date, html5: true %>
+          </div>
+        </div>
+          <%= f.input :payment_date, as: :date, html5: true, label: "payment date 💳" %>
+          <%= f.input :cost, label: "Cost 💰", placeholder: "£"%>
+          <%= f.input :billing_period, label: "billing period ⏰" %>
           <%= f.button :submit, class: 'btn btn-primary my-3 mr-3' %>
+
 
         <% end %>
       </div>
