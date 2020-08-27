@@ -7,12 +7,10 @@ const subslist = document.querySelector('.promote');
 const navHome = document.querySelector('.navbar-brand');
 const homeLink = document.querySelector('.home-link');
 
-
 check.style.display = "none";
 subslist.style.display = "";
 subslist.style.opacity = "0";
 creditcard.classList.add('show-card');
-
 
 const pageLoad = () => {
   mainTitle.innerHTML = "Never forget to cancel a subscription";
