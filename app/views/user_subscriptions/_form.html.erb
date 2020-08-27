@@ -1,0 +1,17 @@
+<%= simple_form_for(user_subscription) do |f| %>
+  <strong> <%= f.association :subscription %><strong>
+  <div class="form-row">
+    <div class="col">
+      <strong><%= f.input :start_date, as: :date, html5: true %></strong>
+    </div>
+    <div class="col">
+      <strong><%= f.input :end_date, as: :date, html5: true %></strong>
+    </div>
+  </div>
+  <strong><%= f.input :payment_date, as: :date, html5: true, label: "Payment date 💳" %></strong>
+  <strong><%= f.input :cost, label: "Cost 💰", placeholder: "£"%></strong>
+  <strong><%= f.association :billing_plan, label: "Billing Plan ⏰" %></strong>
+  <p class="text-right">
+    <%= f.button :submit, "Submit", class: 'btn btn-primary mt-3' %>
+  </p>
+<% end %>
