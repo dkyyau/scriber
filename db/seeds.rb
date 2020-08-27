@@ -6,36 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Creating users..."
-
- User.create(
-     email: "simeo@simeo.co.uk",
-     password: 123456,
-     first_name: "Simeo",
-     last_name: "Russo"
- )
-
- User.create(
-     email: "shreya@shreya.co.uk",
-     password: 123456,
-     first_name: "Shreya",
-     last_name: "Gupta"
- )
-
- User.create(
-     email: "dorothy@dorothy.co.uk",
-     password: 123456,
-     first_name: "Dorothy",
-     last_name: "Yau"
- )
-
- User.create(
-     email: "david@david.co.uk",
-     password: 123456,
-     first_name: "David",
-     last_name: "Magueijo"
- )
-
  puts "Creating categories..."
 
 Category.create(name: "TV")
@@ -43,6 +13,7 @@ Category.create(name: "Film")
 Category.create(name: "Music")
 Category.create(name: "Phone bills")
 Category.create(name: "Gym membership")
+Category.create(name: )
 
 puts "Creating subscriptions..."
 
