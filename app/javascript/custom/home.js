@@ -47,7 +47,7 @@ window.onload = function() {
 };
 
 setTimeout(function() {
-  location.reload();
+  pageLoad();
 }, 17000);
 
 

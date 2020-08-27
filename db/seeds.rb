@@ -13,7 +13,7 @@ Category.create(name: "Film")
 Category.create(name: "Music")
 Category.create(name: "Phone bills")
 Category.create(name: "Gym membership")
-Category.create(name: )
+
 
 puts "Creating subscriptions..."
 
