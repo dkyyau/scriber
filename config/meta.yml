@@ -1,5 +1,5 @@
 meta_product_name: "Scriber"
 meta_title: "Scriber - Keep track of your subscriptions"
-meta_description: "Keep track of your subscription and how much they cost you monthly"
+meta_description: "Keep track of your subscriptions and how much you are spending"
 meta_image: "calendar.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards

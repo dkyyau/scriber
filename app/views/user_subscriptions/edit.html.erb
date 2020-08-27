@@ -1,25 +1,11 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-8">
-      <div class="list-subscription-container">
+  <div class ="form-container">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <div class="list-subscription-container">
         <h1 class="my-3 text-center">Edit your subscription</h1>
-        <%= simple_form_for(@user_subscription) do |f| %>
-        <strong> <%= f.association :subscription %><strong>
-         <div class="form-row">
-          <div class="col">
-            <strong><%= f.input :start_date, as: :date, html5: true %></strong>
-          </div>
-          <div class="col">
-            <strong><%= f.input :end_date, as: :date, html5: true %></strong>
-          </div>
+         <%= render "form", user_subscription: @user_subscription %>
         </div>
-          <strong><%= f.input :payment_date, as: :date, html5: true, label: "Payment date 💳" %></strong>
-          <strong><%= f.input :cost, label: "Cost 💰", placeholder: "£"%></strong>
-         <strong> <%= f.input :billing_plan_id, label: "Billing Plan ⏰" %></strong>
-          <p align="right">
-         <%= f.button :submit, "Update Subscription", class: 'btn btn-primary my-3 mr-3' %>
-        <% end %>
-      </p>
       </div>
     </div>
   </div>
