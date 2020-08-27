@@ -1,3 +1,5 @@
+require 'date'
+
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
@@ -9,13 +11,18 @@ class PagesController < ApplicationController
     @user = current_user
     @user_subscriptions = @user.user_subscriptions
 
-    @sub_costs = []
-    @user_subscriptions.each do |sub|
-      @sub_costs << sub.cost
+    @subscriptions_current_month = []
+    @user_subscriptions.each do |subscription|
+      if subscription.payment_date.mon == Date.today.month
+        @subscriptions_current_month << subscription
+      end
     end
-    @total_cost = @sub_costs.sum
-
-
+      
+    @current_month_costs = []
+    @subscriptions_current_month.each do |subscription|
+        @current_month_costs << subscription.cost
+    end
+    @total_cost = @current_month_costs.sum
 
     if params[:query].present?
       sql_query = " \

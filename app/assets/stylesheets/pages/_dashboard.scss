@@ -14,7 +14,7 @@
 }
 
 .sub-name-dash{
-  font-size: 19px;
+  font-size: 16px;
 }
 
 .sub-reg-cost-dash h3{
@@ -62,7 +62,8 @@
 }
 
 .sub-results{
-  overflow: scroll;
+  overflow-y: scroll;
+  max-width: 440px;
   height: 330px;
   margin-bottom: 8px;
 }
