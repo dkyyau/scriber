@@ -37,6 +37,6 @@ class UserSubscriptionsController < ApplicationController
 
   def user_subscription_params
     params.require(:user_subscription).permit(:start_date, :end_date, :payment_date, :cost,
-    :billing_period, :user_id, :subscription_id)
+    :billing_plan_id, :user_id, :subscription_id)
   end
 end
