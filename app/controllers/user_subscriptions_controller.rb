@@ -1,4 +1,5 @@
 class UserSubscriptionsController < ApplicationController
+
   def new
     @user_subscription = UserSubscription.new
   end
