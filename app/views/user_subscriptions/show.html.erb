@@ -1,17 +1,17 @@
-<% content_for :meta_title, "#{@subscription.name} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @subscription.description %>
+<% content_for :meta_title, "#{@user_subscription.subscription.name} - #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @user_subscription.subscription.description %>
 
 <div class="container">
    <div class="list-subscription-container">
   <h1> Your Subscription </h1>
   <h4><%=@user_subscription.subscription.name%></h4>
-  <p><b>subscription details:</b> <i><%=@user_subscription.subscription.description%></i></p>
+  <p><b>Subscription details:</b> <i><%=@user_subscription.subscription.description%></i></p>
   <p><strong>Start date:</strong> <%= @user_subscription.start_date %></p>
   <p><strong>End date: </strong><%= @user_subscription.end_date %></p>
   <p><strong>Payment date: </strong><%= @user_subscription.payment_date %></p>
    <p>  <%date = @user_subscription.end_date - @user_subscription.start_date %></p>
   <p><strong> How long have you had your subscription? </strong><%= date.to_i %> days </p>
-  <p><strong> Billing plan:</strong> <%= @user_subscription.billing_period %></p>
+  <p><strong> Billing plan:</strong> <%= @user_subscription.billing_plan.name %></p>
   <p><strong>Cost:</strong> £<%= @user_subscription.cost %></p>
    <p align="right">
   <%= link_to "Edit", edit_user_subscription_path(@user_subscription), class: 'btn btn-primary btn-sm' %>
