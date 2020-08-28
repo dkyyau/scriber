@@ -7,7 +7,11 @@
      <div class="d-flex justify-content-around">
       <div>
         <h4><%=@user_subscription.subscription.name%></h4>
-        <%= cl_image_tag @user_subscription.subscription.logo.key, height: 150, width: 150, crop: :pad %>
+        <% if @user_subscription.subscription.logo.attached? %>
+          <%= cl_image_tag @user_subscription.subscription.logo.key, height: 150, width: 150, crop: :pad %>
+        <% else %>
+          <img src="https://res.cloudinary.com/dkyy/image/upload/v1598619290/scriber_gzphbs.png" style="width: 100px; height: 100px;" />
+        <% end %>
       </div>
 
       <div>
