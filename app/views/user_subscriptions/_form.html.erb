@@ -1,5 +1,5 @@
 <%= simple_form_for(user_subscription) do |f| %>
-  <strong> <%= f.association :subscription %><strong>
+  <strong> <%= f.association :subscription, collection: Subscription.order('name ASC')%><strong>
   <div class="form-row">
     <div class="col">
       <strong><%= f.input :start_date, as: :date, html5: true %></strong>
