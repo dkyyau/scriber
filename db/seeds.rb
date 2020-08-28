@@ -38,21 +38,11 @@ require "open-uri"
 
 # netflix = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Netflix_2015_N_logo.svg/132px-Netflix_2015_N_logo.svg.png")
 
-# netflix1 =  Subscription.new(
-#               name: "Netflix - Basic",
-#               description: "One screen at a time, in standard definition.",
-#               price: 5.99,
-#               category_id: 1
-#             )
+# netflix1 =  Subscription.new(name: "Netflix - Basic", description: "One screen at a time, in standard definition.", price: 5.99, category_id: 1)
 # netflix1.logo.attach(io: netflix, filename: '132px-Netflix_2015_N_logo.svg.png', content_type: 'image/png')
 # netflix1.save
 
-# netflix2 = Subscription.new(
-#             name: "Netflix - Standard",
-#             description: "2 screens at a time, in HD.",
-#             price: 8.99,
-#             category_id: 1
-#           )
+# netflix2 = Subscription.new(name: "Netflix - Standard", description: "2 screens at a time, in HD.", price: 8.99, category_id: 1)
 # netflix2.logo.attach(io: netflix, filename: '132px-Netflix_2015_N_logo.svg.png', content_type: 'image/png')
 # netflix2.save
 

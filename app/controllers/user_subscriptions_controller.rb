@@ -38,7 +38,7 @@ class UserSubscriptionsController < ApplicationController
   def destroy
     @user_subscription = UserSubscription.find(params[:id])
     @user_subscription.destroy
-    redirect_to user_subscription_path
+    redirect_to dashboard_path
   end
   private
 
