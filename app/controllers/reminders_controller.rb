@@ -9,7 +9,7 @@ class RemindersController < ApplicationController
     @user_subscription = UserSubscription.find(params[:user_subscription_id])
     @reminder.user_subscription = @user_subscription
     if @reminder.save
-      redirect_to  dashboard_path
+      redirect_to user_subscription_path(@user_subscription)
     else
       render 'new'
     end
