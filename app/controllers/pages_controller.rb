@@ -11,6 +11,14 @@ class PagesController < ApplicationController
     @user = current_user
     @user_subscriptions = @user.user_subscriptions
 
+    @user_reminders = []
+    @user_subscriptions.each do |subscription|
+      subscription.reminders.each do |reminder|
+       @user_reminders << reminder
+     end
+    end
+
+
     @subscriptions_current_month = []
     @user_subscriptions.each do |subscription|
       if subscription.payment_date.mon == Date.today.month

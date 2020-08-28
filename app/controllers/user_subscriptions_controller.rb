@@ -19,7 +19,7 @@ class UserSubscriptionsController < ApplicationController
     @user_subscription = UserSubscription.new(user_subscription_params)
     @user_subscription.user = current_user
     if @user_subscription.save
-      redirect_to dashboard_path
+      redirect_to new_user_subscription_reminder_path(@user_subscription)
     else
       render 'new'
     end
