@@ -11,6 +11,10 @@
   color: #fff;
   font-size: 16px;
   margin: 8px;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .sub-name-dash{
@@ -57,7 +61,7 @@
   right: 20px;
 }
 
-.sub-results{
+.sub-results {
   overflow-y: scroll;
   max-width: 440px;
   height: 330px;
