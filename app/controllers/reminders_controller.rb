@@ -1,6 +1,7 @@
 class RemindersController < ApplicationController
   def new
     @reminder = Reminder.new
+    @user_subscription = UserSubscription.find(params[:user_subscription_id])
   end
 
   def create
@@ -33,6 +34,6 @@ class RemindersController < ApplicationController
   private
 
   def reminder_params
-    params.require(:reminders).permit(:date, :details)
+    params.require(:reminder).permit(:date, :details)
   end
 end

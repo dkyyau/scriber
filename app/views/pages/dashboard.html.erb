@@ -31,6 +31,7 @@
                 <% end %>
                 <div class="sub-results">
                   <% @user_subscriptions.each do |user_subscription| %>
+                  <%= link_to user_subscription_path(user_subscription) do %>
                   <div class="subscription-item-dash">
                     <div class="sub-logo-dash" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/052018/untitled-1_282.png?zBgfG0XEfdsPUq33GRuhu6udfY3Yu_rs&itok=39OQ7JCF)"></div>
                     <div class="sub-info-dash">
@@ -39,6 +40,7 @@
                     </div>
                     <div class="sub-reg-cost-dash"><h3>£<%= user_subscription.cost %></h3></div>
                   </div>
+                  <% end %>
                   <% end %>
                 </div>
               </div>
@@ -63,11 +65,26 @@
             </div>
 
 
-        </div>  
+        </div>
 
           <div class="tab-pane fade" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">...</div>
 
-          <div class="tab-pane fade" id="v-pills-reminders" role="tabpanel" aria-labelledby="v-pills-reminders-tab">...</div>
+          <div class="tab-pane fade" id="v-pills-reminders" role="tabpanel" aria-labelledby="v-pills-reminders-tab">
+            <div class="sub-results">
+                  <% @user_subscriptions.each do |user_subscription| %>
+                  <%= link_to user_subscription_path(user_subscription) do %>
+                  <div class="subscription-item-dash">
+                    <div class="sub-logo-dash" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/052018/untitled-1_282.png?zBgfG0XEfdsPUq33GRuhu6udfY3Yu_rs&itok=39OQ7JCF)"></div>
+                    <div class="sub-info-dash">
+                      <h3 class="sub-name-dash margin-sm"><%= user_subscription.subscription.name %></h3>
+                      <p class='sub-next-payment-dash margin-sm'>Next payment: <%= user_subscription.payment_date %></p>
+                    </div>
+                    <div class="sub-reg-cost-dash"><h3>£<%= user_subscription.cost %></h3></div>
+                  </div>
+                  <% end %>
+                  <% end %>
+                </div>
+          </div>
 
           <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
 
@@ -75,4 +92,4 @@
     </div>
   </div>
 </div>
-  
+
