@@ -19,11 +19,7 @@
         <p><strong>Start date:</strong> <%= @user_subscription.start_date %></p>
         <p><strong>End date: </strong><%= @user_subscription.end_date %></p>
         <p><strong>Payment date: </strong><%= @user_subscription.payment_date %></p>
-        <% if @date.nil? %>
-        <% else %>
-          <p><strong> How long you have had this subscription: </strong><%= @date.to_i %> days </p>
-        <% end %>
-        <p><strong> Billing plan:</strong> <%= @user_subscription.billing_plan.name %></p>
+        <p><strong>Billing plan:</strong> <%= @user_subscription.billing_plan.name %></p>
         <p><strong>Cost:</strong> £<%= number_with_precision(@user_subscription.cost, precision: 2) %></p>
       </div>
     </div>
