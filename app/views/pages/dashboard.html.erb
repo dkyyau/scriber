@@ -26,21 +26,21 @@
                 placeholder: "Search"
                 %>
                 <% end %>
-                <%= link_to new_user_subscription_path,:class => "btn" do %>
+                <%= link_to new_user_subscription_path, class: "btn" do %>
                   Add Subscription <i class="far fa-calendar-plus"></i>
                 <% end %>
                 <div class="sub-results">
                   <% @user_subscriptions.each do |user_subscription| %>
-                  <%= link_to user_subscription_path(user_subscription) do %>
-                  <div class="subscription-item-dash">
-                    <div class="sub-logo-dash" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('<%= cl_image_path user_subscription.subscription.logo.key, height: 70, width: 70, crop: :lpad %>')"></div>
-                    <div class="sub-info-dash">
-                      <h3 class="sub-name-dash margin-sm"><%= user_subscription.subscription.name %></h3>
-                      <p class='sub-next-payment-dash margin-sm'>Next payment: <%= user_subscription.payment_date %></p>
-                    </div>
-                    <div class="sub-reg-cost-dash"><h3>£<%= number_with_precision(user_subscription.cost, precision: 2) %></h3></div>
-                  </div>
-                  <% end %>
+                    <%= link_to user_subscription_path(user_subscription), class: "text-decoration-none" do %>
+                      <div class="subscription-item-dash">
+                        <div class="sub-logo-dash" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('<%= cl_image_path user_subscription.subscription.logo.key, height: 70, width: 70, crop: :lpad %>')"></div>
+                        <div class="sub-info-dash">
+                          <h3 class="sub-name-dash margin-sm"><%= user_subscription.subscription.name %></h3>
+                          <p class='sub-next-payment-dash margin-sm'>Next payment: <%= user_subscription.payment_date %></p>
+                        </div>
+                        <div class="sub-reg-cost-dash"><h3>£<%= number_with_precision(user_subscription.cost, precision: 2) %></h3></div>
+                      </div>
+                    <% end %>
                   <% end %>
                 </div>
               </div>
