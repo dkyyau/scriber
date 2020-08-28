@@ -22,16 +22,19 @@
           <p><strong>Payment date: </strong><%= @user_subscription.payment_date %></p>
         <% if @date.nil? %>
         <% else %>
-          <p>  <%= @date %></p>
-          <p><strong> How long have you had your subscription? </strong><%= @date.to_i %> days </p>
+          <p><strong> How long you have had this subscription: </strong><%= @date.to_i %> days </p>
         <% end %>
         <p><strong> Billing plan:</strong> <%= @user_subscription.billing_plan.name %></p>
         <p><strong>Cost:</strong> £<%= number_with_precision(@user_subscription.cost, precision: 2) %></p>
       </div>
     </div>
+    <div class="text-right">
+      <%= link_to "Add a reminder", new_user_subscription_reminder_path(@user_subscription), class: 'btn btn-primary btn-sm my-3' %>
+    </div>
    <p align="right">
-      <%= link_to "Edit", edit_user_subscription_path(@user_subscription), class: 'btn btn-primary btn-sm' %>
-      <%= link_to "Add a reminder", new_user_subscription_reminder_path(@user_subscription), class: 'btn btn-primary btn-sm' %>
+      <%= link_to "Delete", user_subscription_path(@user_subscription), method: :delete, data: { confirm: "Delete this subscription?" }, class: "btn btn-danger btn-sm ml-2" %>
+      <%= link_to "Edit", edit_user_subscription_path(@user_subscription), class: 'btn btn-primary btn-sm ml-2' %>
+      <%= link_to "Back", dashboard_path, class: 'btn btn-primary btn-sm ml-2' %>
    <p align="right">
   </div>
 </div>
