@@ -71,8 +71,8 @@
                   <div class="sub-reg-cost-dash"><h3>£<%= number_with_precision(user_subscription.cost, precision: 2) %></h3></div>
                 </div>
                 <% end %>
+                 <h5 class="text-right">Total: £<%=@total_cost %></h5>
               </div>
-              <h5 class="text-right">Total: £<%=@total_cost %></h5>
               </div>
             </div>
 
@@ -87,7 +87,9 @@
 
           <div class="tab-pane fade" id="v-pills-reminders" role="tabpanel" aria-labelledby="v-pills-reminders-tab">
             <% @user_reminders.each do |reminder| %>
-            <h4> <%= reminder.date %>:  <%= reminder.details %> </h4>
+            <div class="reminder-item">
+              <h4><i id="bell" class="far fa-bell"></i> <%= reminder.date %>:  <%= reminder.details %> </h4>
+            </div>
             <% end %>
           </div>
 
