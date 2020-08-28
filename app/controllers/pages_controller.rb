@@ -17,7 +17,7 @@ class PagesController < ApplicationController
         @subscriptions_current_month << subscription
       end
     end
-      
+
     @current_month_costs = []
     @subscriptions_current_month.each do |subscription|
         @current_month_costs << subscription.cost
