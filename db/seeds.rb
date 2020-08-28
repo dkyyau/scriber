@@ -107,7 +107,7 @@ require "open-uri"
 # headspace.logo.attach(io: headspacelogo, filename: 'Headspace-app-logo-fitted-300x251.jpg', content_type: 'image/jpg')
 # headspace.save
 
-spotify = URI.open("https://developer.spotify.com/assets/branding-guidelines/icon3@2x.png")
+# spotify = URI.open("https://developer.spotify.com/assets/branding-guidelines/icon3@2x.png")
 
 # spotify1 = Subscription.new(
 #             name: "Spotify - Individual",
@@ -380,16 +380,16 @@ spotify = URI.open("https://developer.spotify.com/assets/branding-guidelines/ico
 #   price: 12.99,
 #   category_id: 7)
 
-# Subscription.create(
-#   name: "PureGym - Offpeak",
-#   description: "limited to off peak hours",
-#   price: 9.99,
-#   category_id: 7)
+Subscription.create(
+  name: "PureGym - Offpeak",
+  description: "limited to off peak hours",
+  price: 9.99,
+  category_id: 7)
 
-# Subscription.create(
-#   name: "Hello Fresh - two people",
-#   description: "meal delievery service",
-#   price: 29.99,
-#   category_id: 7)
+Subscription.create(
+  name: "Hello Fresh - two people",
+  description: "meal delievery service",
+  price: 29.99,
+  category_id: 7)
 
 puts "Finished!"
