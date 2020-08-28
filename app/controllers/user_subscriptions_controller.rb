@@ -6,6 +6,13 @@ class UserSubscriptionsController < ApplicationController
 
   def show
     @user_subscription = UserSubscription.find(params[:id])
+
+    if @user_subscription.end_date.nil?
+      @date = nil
+    else
+    @date = @user_subscription.end_date - @user_subscription.start_date
+  end
+
   end
 
   def create

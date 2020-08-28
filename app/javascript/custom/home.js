@@ -8,7 +8,7 @@ const navHome = document.querySelector('.navbar-brand');
 const homeLink = document.querySelector('.home-link');
 
 check.style.display = "none";
-subslist.style.display = "";
+subslist.style.display = "none";
 subslist.style.opacity = "0";
 creditcard.classList.add('show-card');
 
@@ -24,6 +24,7 @@ const pageLoad = () => {
     });
   };
   setTimeout(() => {
+    subslist.style.display = "";
     subsListAnimation()
   }, 3000);
   setTimeout(() => {
