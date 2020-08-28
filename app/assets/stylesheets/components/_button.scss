@@ -1,0 +1,17 @@
+.btn-primary {
+  background-color: #C788E5;
+  border: 1px solid #C788E5;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.8;
+}
+
+.btn-danger {
+  background-color: $red-light;
+  border: 1px solid $red-light;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.8;
+}
