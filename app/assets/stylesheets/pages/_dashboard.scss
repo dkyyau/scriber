@@ -1,10 +1,15 @@
+
+.dash-container{
+  margin: 0 auto;
+  padding: 4px 16px;
+}
+
 .subscription-item-dash {
   position: relative;
   height: 100px;
   max-width:100%;
   border-radius: 8px;
-  background: rgb(223,180,244);
-  background: linear-gradient(90deg, rgba(223,180,244,1) 4%, rgba(199,136,229,1) 33%);
+  background: rgb(229,180,244);
   padding: 16px 24px;
   display: flex;
   align-items: center;
@@ -18,6 +23,10 @@
   }
 }
 
+#setAlert{
+  margin-left:4px;
+}
+
 .subscription-item-dash:hover .sub-item-overlay{
   opacity: 1;
 }
@@ -28,12 +37,13 @@ top:0;
 left: 0;
 width: 100%;
 height: 100%;
-background: rgb(229,180,244);
+background: rgba(229,180,244,0.8);
 display: flex;
 justify-content: center;
 align-items: center;
 opacity: 0;
 transition: opacity 0.3s ease-in;
+cursor: pointer;
 }
 
 
@@ -108,9 +118,10 @@ transition: opacity 0.3s ease-in;
 
 
 .reminder-item{
-  height: 40px;
-  max-width:100%;
+  height: 50px;
+  max-width:80%;
   border-radius: 8px;
+  background: rgb(229,180,244);
   padding: 16px;
   display: flex;
   align-items: center;
@@ -130,7 +141,7 @@ transition: opacity 0.3s ease-in;
 }
 
 #bell{
-  color: #C788E5;
+  color: #fff;
 }
 
 .reminder-item:hover p i{
