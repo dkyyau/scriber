@@ -8,11 +8,12 @@ const navHome = document.querySelector('.navbar-brand');
 const homeLink = document.querySelector('.home-link');
 
 check.style.display = "none";
-subslist.style.display = "none";
+subslist.style.display = "";
 subslist.style.opacity = "0";
 creditcard.classList.add('show-card');
 
 const pageLoad = () => {
+  subslist.style.display = "none";
   mainTitle.innerHTML = "Never forget to cancel a subscription";
   //subs list animation
   const subsListAnimation = () => {
@@ -46,7 +47,7 @@ window.onload = function() {
 };
 
 setTimeout(function() {
-  pageLoad();
+  subslist.style.visibility='none';
 }, 17000);
 
 
