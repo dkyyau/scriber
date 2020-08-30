@@ -1,8 +1,8 @@
 <div class="dash-container">
-  <h1 class="text-center my-3">Dashboard</h1>
+  <h1 class="my-3 ml-5">Dashboard</h1>
 
-  <div class="row">
-    <div class="col-3">
+  <div class="row justify-content-center">
+    <div class="col-2">
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link active" id="v-pills-current-tab" data-toggle="pill" href="#v-pills-current" role="tab" aria-controls="v-pills-current" aria-selected="true"><i class="far fa-calendar-check"></i>Current subscriptions</a>
         <a class="nav-link" id="v-pills-all-tab" data-toggle="pill" href="#v-pills-all" role="tab" aria-controls="v-pills-all" aria-selected="false"><i class="fas fa-search-dollar"></i>All subscriptions</a>
@@ -11,63 +11,60 @@
       </div>
     </div>
 
-    <div class="col-9">
+    <div class="col-10">
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-current" role="tabpanel" aria-labelledby="v-pills-current-tab" style="height: 100%;">
           <div class="row">
-
             <div class="col-12 col-lg-6">
-              <div>
-                <h2 class="text-center mb-3">Current subscriptions</h2>
 
-                <%= link_to new_user_subscription_path, class: "btn" do %>
-                  Add Subscription <i class="far fa-calendar-plus"></i>
-                <% end %>
-                <div class="sub-results">
-                  <% @user_subscriptions.each do |user_subscription| %>
-                    <%= link_to user_subscription_path(user_subscription), class: "text-decoration-none" do %>
-                      <div class="subscription-item-dash">
+              <h2 class="text-center mb-3">Current subscriptions</h2>
 
+              <%= link_to new_user_subscription_path, class: "btn" do %>
+                Add Subscription <i class="far fa-calendar-plus"></i>
+              <% end %>
 
-                        <div class="sub-item-overlay">
-                           <%=link_to user_subscription_path(user_subscription) do %>
-                          <i class="far fa-edit"></i>
-                          <% end %>
+              <div class="sub-results">
+                <% @user_subscriptions.each do |user_subscription| %>
+                    <div class="subscription-item-dash">
 
-                          <%=link_to user_subscription_reminders_path(user_subscription) do %>
-                          <i class="far fa-bell"></i>
-                          <% end %>
-
-                        </div>
-                        <% if user_subscription.subscription.logo.attached? %>
-                          <div class="sub-logo-dash" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('<%= cl_image_path user_subscription.subscription.logo.key, height: 70, width: 70, crop: :lpad %>')"></div>
-                        <% else %>
-                          <div class="sub-logo-dash">
-                            <img src="https://res.cloudinary.com/dkyy/image/upload/v1598619567/scriber_oo8jwh.png" alt="" style="width: 70px; height: 70px;">
-                          </div>
+                      <div class="sub-item-overlay">
+                        <%=link_to user_subscription_path(user_subscription) do %>
+                          <i class="fas fa-info"></i>
                         <% end %>
-                        <div class="sub-info-dash">
-                          <h3 class="sub-name-dash margin-sm"><%= user_subscription.subscription.name %>
-                             <% if user_subscription.reminders.length > 0 %>
-                            <p id="setAlert" <i class="far fa-calendar-check"></i></p>
-                            <% end %>
-                          </h3>
-                          <p class='sub-next-payment-dash margin-sm'>Next payment: <%= user_subscription.payment_date %></p>
-                        </div>
-                        <div class="sub-reg-cost-dash"><h3>£<%= number_with_precision(user_subscription.cost, precision: 2) %></h3></div>
+
+                        <%=link_to user_subscription_reminders_path(user_subscription) do %>
+                          <i class="far fa-bell"></i>
+                        <% end %>
 
                       </div>
-                    <% end %>
+                      <% if user_subscription.subscription.logo.attached? %>
+                        <div class="sub-logo-dash" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('<%= cl_image_path user_subscription.subscription.logo.key, height: 70, width: 70, crop: :lpad %>')"></div>
+                      <% else %>
+                        <div class="sub-logo-dash">
+                          <img src="https://res.cloudinary.com/dkyy/image/upload/v1598619567/scriber_oo8jwh.png" alt="" style="width: 70px; height: 70px;">
+                        </div>
+                      <% end %>
+                      <div class="sub-info-dash">
+                        <div class="d-flex">
+                        <h3 class="sub-name-dash margin-sm"><%= user_subscription.subscription.name %></h3>
+                        <% if user_subscription.reminders.length > 0 %>
+                          <p id="setAlert"><i class="far fa-calendar-check"></i></p>
+                        <% end %>
+                        </div>
+                        <p class='sub-next-payment-dash margin-sm'>Next payment: <%= user_subscription.payment_date %></p>
+                      </div>
+                      <div class="sub-reg-cost-dash"><h3>£<%= number_with_precision(user_subscription.cost, precision: 2) %></h3></div>
+
+                    </div>
                   <% end %>
-                </div>
               </div>
             </div>
 
             <div class="col-12 col-lg-6">
-              <h2 class="text-center mb-3">This month</h2>
+              <h2 class="text-center mb-5">This month</h2>
               <div class="sub-results">
                 <% @subscriptions_current_month.each do |user_subscription| %>
-                <div class="subscription-item-dash">
+                  <div class="subscription-item-dash">
                   <% if user_subscription.subscription.logo.attached? %>
                     <div class="sub-logo-dash" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('<%= cl_image_path user_subscription.subscription.logo.key, height: 70, width: 70, crop: :lpad %>')"></div>
                   <% else %>
@@ -80,20 +77,20 @@
                     <p class='sub-next-payment-dash margin-sm'>Next payment: <%= user_subscription.payment_date %></p>
                   </div>
                   <div class="sub-reg-cost-dash"><h3>£<%= number_with_precision(user_subscription.cost, precision: 2) %></h3></div>
-                </div>
+                  </div>
                 <% end %>
-                 <h5 class="text-right">Total: £<%=@total_cost %></h5>
-              </div>
+                <h5 class="text-right mr-5">Total: £<%=@total_cost %></h5>
               </div>
             </div>
-
-
+          </div>
         </div>
 
-          <div class="tab-pane fade" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
+
+        <div class="tab-pane fade" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
+          <div class="row justify-content-center">
             <div class="col-12 col-lg-6">
               <div>
-                <h2 class="text-center mb-3">Current subscriptions</h2>
+                <h2 class="text-center mb-3">All subscriptions</h2>
                 <%= form_tag dashboard_path, method: :get do %>
                 <%= text_field_tag :query,
                 params[:query],
@@ -111,7 +108,7 @@
 
 
                         <div class="sub-item-overlay">
-                           <%=link_to user_subscription_path(user_subscription) do %>
+                            <%=link_to user_subscription_path(user_subscription) do %>
                           <i class="far fa-edit"></i>
                           <% end %>
 
@@ -139,22 +136,30 @@
               </div>
             </div>
           </div>
+        </div>
 
 
-
-
-
-          <div class="tab-pane fade" id="v-pills-reminders" role="tabpanel" aria-labelledby="v-pills-reminders-tab">
-            <% @user_reminders.each do |reminder| %>
-            <div class="reminder-item">
-              <p><i id="bell" class="far fa-bell"></i> <%=reminder.user_subscription.subscription.name %> <%= reminder.date %>:  <%= reminder.details %> </p>
+        <div class="tab-pane fade" id="v-pills-reminders" role="tabpanel" aria-labelledby="v-pills-reminders-tab">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-6">
+              <h2 class="text-center mb-3">Reminders</h2>
+              <% @user_reminders.each do |reminder| %>
+                <div class="reminder-item">
+                  <p><i id="bell" class="far fa-bell"></i> <%=reminder.user_subscription.subscription.name %> <%= reminder.date %>:  <%= reminder.details %> </p>
+                </div>
+              <% end %>
             </div>
-            <% end %>
           </div>
+        </div>
 
-
-
-          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-6">
+              <h2 class="text-center mb-3">Profile</h2>
+              ...
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>

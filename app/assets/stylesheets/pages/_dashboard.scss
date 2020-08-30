@@ -1,13 +1,14 @@
 
 .dash-container{
   margin: 0 auto;
-  padding: 4px 16px;
+  padding: 8px 40px;
 }
 
 .subscription-item-dash {
   position: relative;
   height: 100px;
-  max-width:100%;
+  min-width: 60%;
+  max-width: 80%;
   border-radius: 8px;
   background: rgb(229,180,244);
   padding: 16px 24px;
@@ -16,7 +17,7 @@
   overflow: hidden;
   color: #fff;
   font-size: 16px;
-  margin: 8px;
+  margin: 8px auto;
   opacity: 0.9;
   &:hover {
     opacity: 1;
@@ -32,27 +33,29 @@
 }
 
 .sub-item-overlay{
-position: absolute;
-top:0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(229,180,244,0.8);
-display: flex;
-justify-content: center;
-align-items: center;
-opacity: 0;
-transition: opacity 0.3s ease-in;
-cursor: pointer;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(229,180,244,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  cursor: pointer;
 }
 
 
-.sub-item-overlay i{
- background: #fff;
- border-radius: 50%;
- padding: 8px;
- font-size: 25px;
- margin:0 20px;
+.sub-item-overlay a {
+  background-color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 24px;
+  margin: 0 24px;
+  text-align: center;
 }
 
 .sub-item-overlay i:hover{
@@ -104,9 +107,9 @@ cursor: pointer;
 }
 
 .sub-results {
-  max-width: 440px;
+  max-width: 100%;
   height: 100%;
-  margin-bottom: 18px;
+  margin-bottom: 24px;
 }
 
 .nav-link {
@@ -114,8 +117,6 @@ cursor: pointer;
     margin-right: 8px;
   }
 }
-
-
 
 .reminder-item{
   height: 50px;
@@ -142,6 +143,7 @@ cursor: pointer;
 
 #bell{
   color: #fff;
+  margin-right: 8px;
 }
 
 .reminder-item:hover p i{
