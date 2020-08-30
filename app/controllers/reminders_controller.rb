@@ -1,4 +1,10 @@
 class RemindersController < ApplicationController
+
+  def index
+    @reminders = Reminder.all
+    @user_subscription = UserSubscription.find(params[:user_subscription_id])
+  end
+
   def new
     @reminder = Reminder.new
     @user_subscription = UserSubscription.find(params[:user_subscription_id])

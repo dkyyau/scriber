@@ -1,0 +1,8 @@
+<h1> <%= @user_subscription.subscription.name %></h1>
+<h2>All Reminders</h2>
+
+<% @reminders.each do |reminder|%>
+ <div class="reminder-index-item">
+   <p> <%= reminder.details %> </p>
+ </div>
+<% end %>
