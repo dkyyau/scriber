@@ -1,8 +1,8 @@
 <div class="dash-container">
-  <h1 class="my-3 ml-5">Dashboard</h1>
+  <h1 class="text-left">Dashboard</h1>
 
   <div class="row justify-content-center">
-    <div class="col-2">
+    <div class="col-12 col-lg-3 col-xl-2">
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link active" id="v-pills-current-tab" data-toggle="pill" href="#v-pills-current" role="tab" aria-controls="v-pills-current" aria-selected="true"><i class="far fa-calendar-check"></i>Current subscriptions</a>
         <a class="nav-link" id="v-pills-all-tab" data-toggle="pill" href="#v-pills-all" role="tab" aria-controls="v-pills-all" aria-selected="false"><i class="fas fa-search-dollar"></i>All subscriptions</a>
@@ -11,11 +11,11 @@
       </div>
     </div>
 
-    <div class="col-10">
+    <div class="col-12 col-lg-9 col-xl-10">
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-current" role="tabpanel" aria-labelledby="v-pills-current-tab" style="height: 100%;">
-          <div class="row">
-            <div class="col-12 col-lg-6">
+          <div class="row justify-content-around">
+            <div class="col-12 col-lg-6 col-xl-4">
 
               <h2 class="text-center mb-3">Current subscriptions</h2>
 
@@ -60,7 +60,7 @@
               </div>
             </div>
 
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 col-xl-4">
               <h2 class="text-center mb-5">This month</h2>
               <div class="sub-results">
                 <% @subscriptions_current_month.each do |user_subscription| %>
@@ -79,7 +79,7 @@
                   <div class="sub-reg-cost-dash"><h3>£<%= number_with_precision(user_subscription.cost, precision: 2) %></h3></div>
                   </div>
                 <% end %>
-                <h5 class="text-right mr-5">Total: £<%=@total_cost %></h5>
+                <h5 class="text-right mr-2">Total: £<%=@total_cost %></h5>
               </div>
             </div>
           </div>

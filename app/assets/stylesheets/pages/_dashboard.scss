@@ -7,8 +7,7 @@
 .subscription-item-dash {
   position: relative;
   height: 100px;
-  min-width: 60%;
-  max-width: 80%;
+  max-width: 100%;
   border-radius: 8px;
   background: rgb(229,180,244);
   padding: 16px 24px;
@@ -129,7 +128,7 @@
   overflow: hidden;
   color: #fff;
   font-size: 16px;
-  margin: 4px;
+  margin: 4px auto;
   cursor: pointer;
   p{
     color: black;
