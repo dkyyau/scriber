@@ -1,5 +1,5 @@
 class UserSubscription < ApplicationRecord
-
+  after_commit :async_update
   attr_accessor :add_reminder #Used for simple_form (not on schema)
   belongs_to :user
   belongs_to :subscription
@@ -7,4 +7,10 @@ class UserSubscription < ApplicationRecord
   belongs_to :billing_plan
   validates :payment_date, presence: true
   validates :cost, presence: true
+
+  private
+
+  def async_update
+    UpdatePaymentJob.perform_later(self)
+  end
 end
