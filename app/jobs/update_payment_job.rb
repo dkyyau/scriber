@@ -18,6 +18,7 @@ class UpdatePaymentJob < ApplicationJob
     when "24 months"
       user_subscription.payment_date = user_subscription.payment_date.next_year(2)
     end
+    user_subscription.save
     UpdatePaymentJob.set(wait_until: user_subscription.payment_date.noon).perform_later(user_subscription)
     puts "Your new payment date is #{user_subscription.payment_date}"
     # Do something later
