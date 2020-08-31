@@ -19,6 +19,7 @@ class UserSubscriptionsController < ApplicationController
     @user_subscription = UserSubscription.new(user_subscription_params)
     @user_subscription.user = current_user
     if @user_subscription.save
+      UpdatePaymentJob.set(wait_until: @user_subscription.payment_date.noon).perform_later(@user_subscription)
       redirect_to new_user_subscription_reminder_path(@user_subscription)
     else
       render 'new'
