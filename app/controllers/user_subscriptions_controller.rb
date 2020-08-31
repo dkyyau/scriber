@@ -18,9 +18,11 @@ class UserSubscriptionsController < ApplicationController
   def create
     @user_subscription = UserSubscription.new(user_subscription_params)
     @user_subscription.user = current_user
-    if @user_subscription.save
+    if @user_subscription.save && @user_subscription.add_reminder == 'true'
       UpdatePaymentJob.set(wait_until: @user_subscription.payment_date.noon).perform_later(@user_subscription)
       redirect_to new_user_subscription_reminder_path(@user_subscription)
+    elsif @user_subscription.save && @user_subscription.add_reminder == 'false'
+      redirect_to dashboard_path
     else
       render 'new'
     end
@@ -45,6 +47,6 @@ class UserSubscriptionsController < ApplicationController
 
   def user_subscription_params
     params.require(:user_subscription).permit(:start_date, :end_date, :payment_date, :cost,
-    :billing_plan_id, :user_id, :subscription_id)
+    :billing_plan_id, :user_id, :subscription_id, :add_reminder)
   end
 end
