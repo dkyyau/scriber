@@ -8,10 +8,10 @@
 
 # require "open-uri"
 
-# BillingPlan.destroy_all
-# Category.destroy_all
-# UserSubscription.destroy_all
-# Subscription.destroy_all
+BillingPlan.destroy_all
+Category.destroy_all
+UserSubscription.destroy_all
+Subscription.destroy_all
 
 puts "Creating billing plans..."
 
@@ -42,7 +42,7 @@ Subscription.create(name: "Netflix - Basic", description: "One screen at a time,
 # # netflix1.logo.attach(io: netflix, filename: '132px-Netflix_2015_N_logo.svg.png', content_type: 'image/png')
 # # netflix1.save
 
-# Subscription.create(name: "Netflix - Standard", description: "2 screens at a time, in HD.", price: 8.99, category_id: 1)
+Subscription.create(name: "Netflix - Standard", description: "2 screens at a time, in HD.", price: 8.99, category_id: 1)
 # # netflix2.logo.attach(io: netflix, filename: '132px-Netflix_2015_N_logo.svg.png', content_type: 'image/png')
 # # netflix2.save
 
