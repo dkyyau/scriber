@@ -13,32 +13,32 @@
 # UserSubscription.destroy_all
 # Subscription.destroy_all
 
-# puts "Creating billing plans..."
+puts "Creating billing plans..."
 
-# BillingPlan.create(name: "Free trial")
-# BillingPlan.create(name: "Weekly")
-# BillingPlan.create(name: "Monthly")
-# BillingPlan.create(name: "3 months")
-# BillingPlan.create(name: "12 months")
-# BillingPlan.create(name: "24 months")
-# BillingPlan.create(name: "Lifetime")
+BillingPlan.create(name: "Free trial")
+BillingPlan.create(name: "Weekly")
+BillingPlan.create(name: "Monthly")
+BillingPlan.create(name: "3 months")
+BillingPlan.create(name: "12 months")
+BillingPlan.create(name: "24 months")
+BillingPlan.create(name: "Lifetime")
 
-#  puts "Creating categories..."
+ puts "Creating categories..."
 
-# Category.create(name: "Entertainment")
-# Category.create(name: "Cloud storage")
-# Category.create(name: "Software")
-# Category.create(name: "Food and drink")
-# Category.create(name: "Beauty")
-# Category.create(name: "Phone")
-# Category.create(name: "Health")
-# Category.create(name: "Utilities")
+Category.create(name: "Entertainment", colour: "#ED6C79")
+Category.create(name: "Cloud storage", colour: "#91D4F7")
+Category.create(name: "Software", colour: "#F5A36F")
+Category.create(name: "Food and drink", colour: "#83E2D6")
+Category.create(name: "Beauty", colour: "#F492E9")
+Category.create(name: "Phone", colour: "#FFF27F")
+Category.create(name: "Health", colour: "#70E095")
+Category.create(name: "Utilities", colour: "#668DE5")
 
 puts "Creating subscriptions..."
 
 # netflix = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Netflix_2015_N_logo.svg/132px-Netflix_2015_N_logo.svg.png")
 
-# Subscription.create(name: "Netflix - Basic", description: "One screen at a time, in standard definition.", price: 5.99, category_id: 1)
+Subscription.create(name: "Netflix - Basic", description: "One screen at a time, in standard definition.", price: 5.99, category_id: 1)
 # # netflix1.logo.attach(io: netflix, filename: '132px-Netflix_2015_N_logo.svg.png', content_type: 'image/png')
 # # netflix1.save
 
