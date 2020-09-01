@@ -5,7 +5,9 @@ class ReminderMailer < ApplicationMailer
   #
   #   en.reminder_mailer.reminder.subject
   #
-  def reminder
+  def reminder(user, reminder)
+    @user = user
+    @reminder = reminder
     mail(to: @user.email, subject: 'Scriber Reminder')
     # This will render a view in `app/views/user_mailer`!
   end

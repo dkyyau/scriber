@@ -6,6 +6,18 @@ class PagesController < ApplicationController
   def home
   end
 
+  def admin
+  end
+
+  def send_reminder
+    @reminders = Reminder.where(date: Date.today)
+    @reminders.each do |reminder|
+      user = reminder.user_subscription.user
+      ReminderMailer.with(user: user, reminder: reminder).reminder.deliver_now
+    end
+    redirect_to admin_path
+  end
+
 
   def dashboard
     @user = current_user
