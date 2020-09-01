@@ -2,18 +2,29 @@
   <h1 class="text-left">Dashboard</h1>
 
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-3 col-xl-2">
-      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <div class="col-12 col-lg-3 col-xl-2" id="tabs-container">
+      <div class="nav flex-column nav-pills tabs-section-buttons" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link active" id="v-pills-current-tab" data-toggle="pill" href="#v-pills-current" role="tab" aria-controls="v-pills-current" aria-selected="true"><i class="far fa-calendar-check"></i>Current subscriptions</a>
         <a class="nav-link" id="v-pills-all-tab" data-toggle="pill" href="#v-pills-all" role="tab" aria-controls="v-pills-all" aria-selected="false"><i class="fas fa-search-dollar"></i>All subscriptions</a>
-        <a class="nav-link" id="v-pills-reminders-tab" data-toggle="pill" href="#v-pills-reminders" role="tab" aria-controls="v-pills-reminders" aria-selected="false"><i class="far fa-bell"></i> Reminders</a>
+        <a class="nav-link" id="v-pills-reminders-tab" data-toggle="pill" href="#v-pills-reminders" role="tab" aria-controls="v-pills-reminders" aria-selected="false"><i id="reminders-tab" class="far fa-bell"></i> Reminders</a>
         <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="far fa-user-circle"></i>Profile</a>
       </div>
     </div>
 
     <div class="col-12 col-lg-9 col-xl-10">
       <div class="tab-content" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="v-pills-current" role="tabpanel" aria-labelledby="v-pills-current-tab" style="height: 100%;">
+        <div class="tab-pane main-dash fade show active" id="v-pills-current" role="tabpanel" aria-labelledby="v-pills-current-tab" style="height: 100%;">
+
+
+         <% if @dateMatch %>
+         <div class="flash-alert flash-danger alert-item alert-dismissible fade show mb-5" role="alert" id="date-today-alert">
+          <span>Hey! 😱 <strong><%= @dateTodayCount %></strong> reminder(s) for today</span>
+           <a data-dismiss="alert" aria-label="Close">
+            <i id="close-alert" class="fas fa-times"></i>
+           </a>
+           </div>
+          <% end %>
+
           <div class="row justify-content-around">
             <div class="col-12 col-lg-6 col-xl-4">
 
@@ -25,7 +36,7 @@
 
               <div class="sub-results">
                 <% @user_subscriptions.each do |user_subscription| %>
-                    <div class="subscription-item-dash" style="border: 1px solid <%= user_subscription.subscription.category.colour %>; border-left: 8px solid <%= user_subscription.subscription.category.colour %>;">
+                    <div class="subscription-item-dash" style="/*border: 1px solid <%= user_subscription.subscription.category.colour %>;*/ border-left: 8px solid <%= user_subscription.subscription.category.colour %>;">
 
                       <div class="sub-item-overlay">
                         <%=link_to user_subscription_path(user_subscription) do %>
@@ -169,4 +180,20 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  const alertToday = document.getElementById('date-today-alert');
+  const closeAlert = document.getElementById('close-alert');
+  const reminderBell =document.getElementById('reminders-tab');
+  closeAlert.addEventListener('click', ()=>{
+    alertToday.style.visibility="hidden";
+  })
+  alertToday.addEventListener('mouseenter', ()=>{
+    reminderBell.classList.toggle('bellshakeclass')
+  })
+
+  alertToday.addEventListener('mouseleave', ()=>{
+    reminderBell.classList.toggle('bellshakeclass')
+  })
+</script>
 

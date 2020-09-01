@@ -1,20 +1,53 @@
+.flash-alert {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: auto;
+  width: 80%;
+
+}
+
+.flash-alert:hover #close-alert{
+  cursor: pointer;
+  transform: rotate(90deg);
+  transition: 1s ease-in;
+}
+
+
+
+.flash-danger {
+  border: 2px solid #921ace;
+}
+
 
 .dash-container{
   margin: 0 auto;
   padding: 8px 40px;
 }
 
+.main-dash{
+  background-color: #fff;
+  padding:26px 8px;
+  border-radius: 6px;
+}
+
+
 .subscription-item-dash {
   position: relative;
   height: 100px;
   max-width: 100%;
+  min-width: 100%;
   border-radius: 8px;
-  background: #f3d9fc;
+  background: #E5B5F4;
   padding: 16px 24px;
   display: flex;
   align-items: center;
   overflow: hidden;
-  color: grey;
+  color: #353535;
   font-size: 16px;
   margin: 8px auto;
   opacity: 0.9;
@@ -145,8 +178,29 @@
   margin-right: 8px;
 }
 
+#reminders-tab{
+  transition: all 1s ease-in-out;
+}
+
 .reminder-item:hover p i{
    animation: bellshake 0.9s ease-in;
+}
+
+.tabs-section-buttons:hover i{
+  transition: border 1s ease-in-out;
+}
+
+.tabs-section-buttons:hover i{
+ animation: bellshake 1s ease-in-out;
+ font-size: 20px;
+}
+
+.bellshakeclass{
+  animation: bellshake 0.7s ease-in-out;
+  color: #921BCD;
+  border: 7px solid purple;
+  border-radius: 50%;
+  padding: 4px;
 }
 
 

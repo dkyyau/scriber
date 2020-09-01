@@ -23,11 +23,18 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @user_subscriptions = @user.user_subscriptions
-
     @user_reminders = []
+    @user_reminder_dates=[]
     @user_subscriptions.each do |subscription|
       subscription.reminders.each do |reminder|
        @user_reminders << reminder
+       @user_reminder_dates << reminder.date
+     end
+     @dateTodayCount = 0;
+     @dateMatch = false;
+     @user_reminder_dates.each do |date|
+     @dateMatch = date == Date.today ? true : false
+     date == Date.today ? @dateTodayCount += 1 : false
      end
     end
 
