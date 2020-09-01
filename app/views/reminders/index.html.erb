@@ -1,9 +1,21 @@
+<div class="container">
+  <div class ="form-container">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <div class="list-subscription-container">
+
 <h1> <%= @user_subscription.subscription.name %></h1>
-<h2>All Reminders</h2>
-<%= link_to "Add a reminder", new_user_subscription_reminder_path(@user_subscription), class: 'btn btn-primary btn-sm my-3' %>
+<h2> Your Reminder details</h2>
 <% @user_subscription.reminders.each do |reminder|%>
  <div class="reminder-index-item">
    <p> <%= reminder.details %> </p>
+   <p> <%= reminder.date %>
  </div>
 <% end %>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
