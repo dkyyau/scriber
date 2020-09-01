@@ -1,5 +1,90 @@
-<h1>Welcome, <%= @user.first_name %>!</h1>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Raleway&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F8F4F9;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: "Raleway", "Sans-Serif", "Open Sans";
+    }
 
-<p>
-  Start tracking your subscriptions today with Scriber!!!
-</p>
+    .email-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px;
+    }
+
+    .email-header img {
+      height: 50px;
+      margin-right: 8px;
+    }
+
+    .email-header h1 {
+      font-size: 40px;
+      margin: 0;
+      color: #4B4A4B;
+      font-family: "Poppins", "Sans-Serif", "Open Sans"
+    }
+
+    .email-container {
+      width: 60%;
+      background-color: white;
+      border: 1px solid lightgrey;
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      padding: 16px 32px;
+      border-radius: 4px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .details {
+      border: 1px solid #C788E5;
+      border-radius: 4px;
+      padding: 16px;
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      background-color: #F8EAFC;
+      margin: 16px 0 32px 0;
+    }
+
+    h5 {
+      text-align: right;
+    }
+    
+    .button {
+      padding: 16px 0 24px 0;
+    }
+    
+    a {
+      text-decoration: none;
+      color: black;
+      background-color: #C788E5;
+      padding: 16px 24px;
+      border-radius: 32px;
+      opacity: 0.8;
+    }
+    
+    a:hover {
+      opacity: 1;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="email-header">
+    <img src="https://res.cloudinary.com/dkyy/image/upload/v1598968617/Logos/scriber_pe33n6.png">
+    <h1>Scriber</h1>
+  </div>
+  <div class="email-container">
+    <h5><%= @date.strftime("%e %B, %Y") %></h5>
+    <h4>Welcome, <%= @user.first_name %>!</h4>
+    <p>Thank you for choosing <strong>Scriber!</strong></p>
+    <p>Click the button below to get started tracking your subscriptions:</p>
+    <div class="button">
+      <%= link_to "Get started", root_url %>
+    </div>
+    <p>With love from the <strong>Scriber</strong> team 💜</p>
+  </div>
+</body>

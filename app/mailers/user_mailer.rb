@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def welcome
     @user = params[:user]
-
+    @date = Date.today
     mail(to: @user.email, subject: 'Welcome to Scriber!')
   end
 end
