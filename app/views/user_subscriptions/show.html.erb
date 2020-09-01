@@ -20,6 +20,17 @@
         <p><strong>Payment date: </strong><%= @user_subscription.payment_date %></p>
         <p><strong>Billing plan:</strong> <%= @user_subscription.billing_plan.name %></p>
         <p><strong>Cost:</strong> £<%= number_with_precision(@user_subscription.cost, precision: 2) %></p>
+
+      <div class= "box">
+        <% @user_subscription.reminders.each do |reminder|%>
+          <div class="reminder-index-item">
+            <p><strong>🔔Reminder:</strong> <%= reminder.details %> </p>
+          </div>
+          <% end %>
+        </div>
+
+
+
       </div>
     </div>
     <div class="text-right">
