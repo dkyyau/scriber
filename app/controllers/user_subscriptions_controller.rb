@@ -2,6 +2,7 @@ class UserSubscriptionsController < ApplicationController
 
   def new
     @user_subscription = UserSubscription.new
+    @user_subscription.reminders.build
   end
 
   def show
@@ -47,6 +48,6 @@ class UserSubscriptionsController < ApplicationController
 
   def user_subscription_params
     params.require(:user_subscription).permit(:start_date, :end_date, :payment_date, :cost,
-    :billing_plan_id, :user_id, :subscription_id, :add_reminder)
+    :billing_plan_id, :user_id, :subscription_id, :add_reminder, reminders_attributes: [:date, :details])
   end
 end
