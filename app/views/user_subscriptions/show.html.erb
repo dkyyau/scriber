@@ -24,7 +24,8 @@
       <div class= "box">
         <% @user_subscription.reminders.each do |reminder|%>
           <div class="reminder-index-item">
-            <p><strong>🔔Reminder:</strong> <%= reminder.details %> </p>
+            <p><strong>🔔Reminder:</strong> <%= reminder.date %> </p>
+            <p><%= reminder.details %> </p>
           </div>
           <% end %>
         </div>
