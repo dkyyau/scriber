@@ -8,7 +8,8 @@ class ReminderMailer < ApplicationMailer
   def reminder
     @user = params[:user]
     @reminder = params[:reminder]
-    mail(to: @user.email, subject: 'Scriber Reminder')
+    @date = Date.today
+    mail(to: @user.email, subject: 'Scriber Reminder 🔔')
     # This will render a view in `app/views/user_mailer`!
   end
 end

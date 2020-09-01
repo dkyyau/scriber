@@ -1,3 +1,13 @@
-Reminder#reminder
+Scriber
 
-<%= @greeting %>, find me in app/views/reminder_mailer/reminder.text.erb
+<%= @date.strftime("%e %B, %Y") %>
+
+Hi <%= @user.first_name %>,
+
+Here is your reminder for <%= @reminder.user_subscription.subscription.name %>:
+
+Reminder notes:
+
+<%= @reminder.details %>
+
+With love from the Scriber team :)
