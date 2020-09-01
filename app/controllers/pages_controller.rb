@@ -12,8 +12,9 @@ class PagesController < ApplicationController
   def send_reminder
     @reminders = Reminder.where(date: Date.today)
     @reminders.each do |reminder|
-      user = reminder.user_subscription.user
-      ReminderMailer.with(user: user, reminder: reminder).reminder.deliver_now
+      @user = reminder.user_subscription.user
+      @reminder = reminder
+      ReminderMailer.with(user: @user, reminder: @reminder).reminder.deliver_now
     end
     redirect_to admin_path
   end

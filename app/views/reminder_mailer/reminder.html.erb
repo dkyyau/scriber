@@ -1,5 +1,6 @@
-<h1>Reminder</h1>
 
-<p>
-  This is a reminder
-</p>
+<h3> Hello, <%= @user.first_name %></h3>
+<p>Here is your reminder for <%= @reminder.user_subscription.subscription.name%> </p>
+<p>notes: <%= @reminder.details %></p>
+<p>With love from the Scriber team 💜</p>
+
