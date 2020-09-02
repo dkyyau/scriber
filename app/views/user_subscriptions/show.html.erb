@@ -18,10 +18,10 @@
 
     <div class="d-flex justify-content-around mx-3">
       <div class="subscription-logo">
-        <% if @user_subscription.subscription.logo.attached? %>
-          <%= cl_image_tag @user_subscription.subscription.logo.key, height: 150, width: 150, crop: :pad %>
+        <% if @user_subscription.subscription.logo_url.nil? %>
+          <img src="https://res.cloudinary.com/dkyy/image/upload/v1598968617/Logos/scriber_pe33n6.png" alt="">
         <% else %>
-            <img src="<%= user_subscription.subscription.logo_url %>" alt="" style="width: 70px; height: 70px;">
+          <img src="<%= @user_subscription.subscription.logo_url %>" alt="">
         <% end %>
       </div>
 

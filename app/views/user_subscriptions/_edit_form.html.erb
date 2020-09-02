@@ -1,0 +1,21 @@
+<div class="subscription-reminder-form">
+  <%= simple_form_for(user_subscription) do |f| %>
+    <%= f.association :subscription, collection: Subscription.order('name ASC'), input_html: { class: 'select2' } %>
+    <div class="form-row">
+      <div class="col">
+        <%= f.input :start_date, as: :date, html5: true %>
+      </div>
+      <div class="col">
+        <%= f.input :end_date, as: :date, html5: true %>
+      </div>
+    </div>
+
+    <%= f.input :payment_date, as: :date, html5: true, label: "Payment date 💳" %>
+    <%= f.input :cost, label: "Cost 💰", placeholder: "£"%>
+    <%= f.association :billing_plan, label: "Billing Plan ⏰" %>
+
+    <div class="text-right">
+      <%= f.submit "Submit", class: 'btn btn-primary mt-3' %>
+    </div>
+  <% end %>
+</div>
