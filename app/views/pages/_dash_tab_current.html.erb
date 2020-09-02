@@ -1,0 +1,67 @@
+<div class="row justify-content-around">
+            <div class="col-12 col-lg-6">
+
+              <h2 class="text-center mb-3">Current subscriptions</h2>
+
+              <%= link_to new_user_subscription_path, class: "btn" do %>
+                Add Subscription <i class="far fa-calendar-plus"></i>
+              <% end %>
+
+              <div class="sub-results">
+                <% user_subscriptions.each do |user_subscription| %>
+                    <div class="subscription-item-dash" style="/*border: 1px solid <%= user_subscription.subscription.category.colour %>;*/ border-left: 8px solid <%= user_subscription.subscription.category.colour %>;">
+
+                      <div class="sub-item-overlay">
+                        <%=link_to user_subscription_path(user_subscription) do %>
+                          <i class="fas fa-info"></i>
+                        <% end %>
+
+                        <%=link_to user_subscription_reminders_path(user_subscription) do %>
+                          <i class="far fa-bell"></i>
+                        <% end %>
+
+                      </div>
+                      <% if user_subscription.subscription.logo.attached? %>
+                        <div class="sub-logo-dash" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('<%= cl_image_path user_subscription.subscription.logo.key, height: 70, width: 70, crop: :lpad %>')"></div>
+                      <% else %>
+                        <div class="sub-logo-dash">
+                          <img src="https://res.cloudinary.com/dkyy/image/upload/v1598619567/scriber_oo8jwh.png" alt="" style="width: 70px; height: 70px;">
+                        </div>
+                      <% end %>
+                      <div class="sub-info-dash">
+                        <div class="d-flex">
+                        <h3 class="sub-name-dash margin-sm"><%= user_subscription.subscription.name %></h3>
+                        <% if user_subscription.reminders.length > 0 %>
+                          <p id="setAlert"><i class="far fa-calendar-check"></i></p>
+                        <% end %>
+                        </div>
+                        <p class='sub-next-payment-dash margin-sm'>Next payment: <%= user_subscription.payment_date %></p>
+                      </div>
+                      <div class="sub-reg-cost-dash"><h3>£<%= number_with_precision(user_subscription.cost, precision: 2) %></h3></div>
+
+                    </div>
+                  <% end %>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+              <h2 class="text-center mb-5">This month</h2>
+              <div class="sub-results">
+                <% subscriptions_current_month.each do |user_subscription| %>
+                  <div class="subscription-item-dash" style="border: 1px solid <%= user_subscription.subscription.category.colour %>; border-left: 8px solid <%= user_subscription.subscription.category.colour %>;">
+                  <% if user_subscription.subscription.logo.attached? %>
+                    <div class="sub-logo-dash" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('<%= cl_image_path user_subscription.subscription.logo.key, height: 70, width: 70, crop: :lpad %>')"></div>
+                  <% else %>
+                    <div class="sub-logo-dash">
+                      <img src="https://res.cloudinary.com/dkyy/image/upload/v1598619567/scriber_oo8jwh.png" alt="" style="width: 70px; height: 70px;">
+                    </div>
+                  <% end %>
+                  <div class="sub-info-dash">
+                    <h3 class="sub-name-dash margin-sm"><%= user_subscription.subscription.name %></h3>
+                    <p class='sub-next-payment-dash margin-sm'>Next payment: <%= user_subscription.payment_date %></p>
+                  </div>
+                  <div class="sub-reg-cost-dash"><h3>£<%= number_with_precision(user_subscription.cost, precision: 2) %></h3></div>
+                  </div>
+                <% end %>
+                <h5 class="text-right mr-2">Total: £<%=@total_cost %></h5>
+              </div>
