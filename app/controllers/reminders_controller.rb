@@ -16,7 +16,7 @@ class RemindersController < ApplicationController
     @reminder.user_subscription = @user_subscription
     unless @reminder.details == ""
       @reminder.save
-      # redirect_to user_subscription_path(@user_subscription)
+      redirect_to user_subscription_path(@user_subscription)
     end
   end
 
