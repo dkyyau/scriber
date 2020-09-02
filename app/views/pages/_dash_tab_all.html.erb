@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+            <div class="col-12 col-lg-6">
+              <div>
+                <h2 class="text-center mb-3">All subscriptions</h2>
+                <%= form_tag dashboard_path, method: :get do %>
+                <%= text_field_tag :query,
+                params[:query],
+                class: "form-control search-input",
+                placeholder: "Search"
+                %>
+                <% end %>
+                <%= link_to new_user_subscription_path, class: "btn" do %>
+                  Add Subscription <i class="far fa-calendar-plus"></i>
+                <% end %>
+                <div class="sub-results">
+                  <% user_subscriptions.each do |user_subscription| %>
+                    <%= link_to user_subscription_path(user_subscription), class: "text-decoration-none" do %>
+                      <div class="subscription-item-dash" style="border: 1px solid <%= user_subscription.subscription.category.colour %>; border-left: 8px solid <%= user_subscription.subscription.category.colour %>;">
+
+
+                        <div class="sub-item-overlay">
+                            <%=link_to user_subscription_path(user_subscription) do %>
+                          <i class="far fa-edit"></i>
+                          <% end %>
+
+                          <%=link_to user_subscription_reminders_path(user_subscription) do %>
+                          <i class="far fa-bell"></i>
+                          <% end %>
+
+                        </div>
+                        <% if user_subscription.subscription.logo.attached? %>
+                          <div class="sub-logo-dash" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('<%= cl_image_path user_subscription.subscription.logo.key, height: 70, width: 70, crop: :lpad %>')"></div>
+                        <% else %>
+                          <div class="sub-logo-dash">
+                            <img src="https://res.cloudinary.com/dkyy/image/upload/v1598619567/scriber_oo8jwh.png" alt="" style="width: 70px; height: 70px;">
+                          </div>
+                        <% end %>
+                        <div class="sub-info-dash">
+                          <h3 class="sub-name-dash margin-sm"><%= user_subscription.subscription.name %></h3>
+                          <p class='sub-next-payment-dash margin-sm'>Next payment: <%= user_subscription.payment_date %></p>
+                        </div>
+                        <div class="sub-reg-cost-dash"><h3>£<%= number_with_precision(user_subscription.cost, precision: 2) %></h3></div>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>

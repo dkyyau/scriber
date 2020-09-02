@@ -1,10 +1,13 @@
 .btn-primary {
   background-color: $purple-dark;
   border: 1px solid $purple-dark;
-  padding: 15px 25px;
-  border-radius: 50px;
   font-weight: lighter;
   opacity: 0.8;
+}
+
+.btn {
+  padding: 15px 25px;
+  border-radius: 50px;
 }
 
 .btn-danger {
