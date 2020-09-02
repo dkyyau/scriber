@@ -1,21 +1,3 @@
-.form-container {
-  width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-h1 {
-    display: block;
-    font-size: 2.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: 400;
-}
-
 .list-subscription-container {
   background-color: white;
   border: 1px solid lightgrey;
@@ -32,12 +14,12 @@ h1 {
   display: none;
 }
 
-.form {
+.reminder-form {
   width: 100%;
   height: 100px;
   background-color: white;
 }
 
 .subscription-reminder-form {
-  overflow: scroll;
+  height: 100%;
 }

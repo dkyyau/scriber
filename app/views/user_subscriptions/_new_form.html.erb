@@ -1,0 +1,52 @@
+<div class="subscription-reminder-form">
+  <%= simple_form_for(user_subscription) do |f| %>
+    <%= f.association :subscription, collection: Subscription.order('name ASC'), input_html: { class: 'select2' } %>
+    <div class="form-row">
+      <div class="col">
+        <%= f.input :start_date, as: :date, html5: true %>
+      </div>
+      <div class="col">
+        <%= f.input :end_date, as: :date, html5: true %>
+      </div>
+    </div>
+
+    <%= f.input :payment_date, as: :date, html5: true, label: "Payment date 💳" %>
+    <%= f.input :cost, label: "Cost 💰", placeholder: "£"%>
+    <%= f.association :billing_plan, label: "Billing Plan ⏰" %>
+
+    <div class="d-flex justify-content-between align-items-center">
+      <strong><p class="m-0"> Would you like to add a reminder? </p></strong>
+      <div>
+        <div class="yes far fa-3x fa-check-circle"></div>
+        <div class="no far fa-3x fa-times-circle ml-2"></div>
+      </div>
+    </div>
+
+    <div class="reminder-form hide" style="height: 200px;">
+      <%= f.simple_fields_for :reminders do |reminder_attributes|%>
+        <%= reminder_attributes.input :date, as: :date, html5: true %>
+        <%= reminder_attributes.input :details %>
+      <% end %>
+    </div>
+
+    <div class="text-right">
+      <%= f.submit "Submit", class: 'btn btn-primary mt-3' %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+<script>
+  document.querySelector(".yes").addEventListener("click", () => {
+    document.querySelector(".reminder-form").classList.remove("hide")
+  } )
+  document.querySelector(".no").addEventListener("click", () => {
+    document.querySelector(".reminder-form").classList.add("hide")
+  } )
+ </script>
+
