@@ -1,6 +1,6 @@
 <div class="subscription-reminder-form">
 <%= simple_form_for(user_subscription) do |f| %>
-   <%= f.association :subscription, collection: Subscription.order('name ASC')%>
+   <%= f.association :subscription, collection: Subscription.order('name ASC'), input_html: { class: 'select2' } %>
   <div class="form-row">
     <div class="col">
       <strong><%= f.input :start_date, as: :date, html5: true %></strong>
