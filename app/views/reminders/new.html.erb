@@ -4,13 +4,13 @@
       <div class="col-6">
         <div class="list-subscription-container">
           <h2 class="text-center">Add a reminder</h2>
-<%= simple_form_for ([@user_subscription, @reminder]) do |f| %>           <%= simple_form_for ([@user_subscription, @reminder]) do |f| %>
-  <%= f.input :date, as: :date, html5: true %>
-  <%= f.input :details %>
-  <%= f.button :submit %>             <div class="text-right">
-<% end %>
+         <%= simple_form_for ([@user_subscription, @reminder]) do |f| %>
+            <%= f.input :date, as: :date, html5: true %>
+            <%= f.input :details %>
+            <%= f.button :submit %>
+            <div class="text-right">
+                    <% end %>
             </div>
-          <% end %>
         </div>
       </div>
     </div>
