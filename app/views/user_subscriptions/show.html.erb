@@ -38,11 +38,11 @@
     <div class= "reminders-box m-3">
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="font-weight-bold">Reminders</h4>
-        <%= link_to new_user_subscription_reminder_path(@user_subscription) do %>
+        <%= link_to new_user_subscription_reminder_path(@user_subscription), class:"add-reminder-btn" do %>
           Add a reminder <i class="fas fa-plus ml-1"></i>
         <% end %>
       </div>
-      
+
       <% @user_subscription.reminders.each do |reminder|%>
           <p>🔔  <strong><%= reminder.date %>:</strong> <%= reminder.details %></p>
       <% end %>

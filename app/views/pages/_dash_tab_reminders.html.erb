@@ -2,8 +2,11 @@
             <div class="col-12 col-lg-6">
               <h2 class="text-center mb-3">Reminders</h2>
               <% user_reminders.each do |reminder| %>
+              <div class="reminder-name">
+                <%=reminder.user_subscription.subscription.name %>
+              </div>
                 <div class="reminder-item">
-                  <p><i id="bell" class="far fa-bell"></i> <%=reminder.user_subscription.subscription.name %> <%= reminder.date %>:  <%= reminder.details %> </p>
+                  <p><i id="bell" class="far fa-bell"></i><%= reminder.date %>:  <%= reminder.details %> </p>
                 </div>
               <% end %>
             </div>

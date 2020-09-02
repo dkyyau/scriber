@@ -152,7 +152,8 @@
 .reminder-item{
   height: 50px;
   max-width:80%;
-  border-radius: 8px;
+  border-bottom-left-radius:8px;
+  border-bottom-right-radius:8px;
   background: rgb(229,180,244);
   padding: 16px;
   display: flex;
@@ -160,7 +161,7 @@
   overflow: hidden;
   color: #fff;
   font-size: 16px;
-  margin: 4px auto;
+  margin: 0 auto 10px auto;
   cursor: pointer;
   p{
     color: black;
@@ -170,6 +171,15 @@
   i {
     font-size: 20px;
   }
+}
+
+.reminder-name{
+  max-width:80%;
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+  background-color: #e7ceef;
+  padding: 10px;
+  margin: 0 auto;
 }
 
 #bell{
