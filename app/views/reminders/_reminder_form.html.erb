@@ -1,0 +1,8 @@
+<%= simple_form_for ([user_subscription, reminder]) do |f| %>
+  <%= f.input :date, as: :date, html5: true %>
+  <%= f.input :details %>
+  <div class="text-right">
+    <%= link_to "Cancel", :back, class: "btn btn-outline-secondary" %>
+    <%= f.button :submit, "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

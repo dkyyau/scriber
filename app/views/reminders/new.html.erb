@@ -1,17 +1,9 @@
 <div class="container">
-  <h2>Add a reminder</h2>
   <div class="row justify-content-center">
     <div class="col-6">
       <div class="list-subscription-container">
-        <h2 class="text-center">Add a reminder</h2>
-        <%= simple_form_for ([@user_subscription, @reminder]) do |f| %>
-          <%= f.input :date, as: :date, html5: true %>
-          <%= f.input :details %>
-          <div class="text-right">
-            <%= link_to "Cancel", user_subscription_path(@user_subscription), class: "btn btn-outline-secondary" %>
-            <%= f.button :submit, "Submit", class: "btn btn-primary" %>
-          </div>
-        <% end %>
+        <h2 class="text-center">Add reminder</h2>
+        <%= render "reminder_form", user_subscription: @user_subscription, reminder: @reminder %>
       </div>
     </div>
   </div>

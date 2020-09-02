@@ -2,7 +2,7 @@
   <div class="showcase-content">
     <%= image_tag("check.gif", id:'check', :alt => "rss feed") %>
     <%= image_tag("credit.png", id:'creditcard', :alt => "rss feed") %>
-    <h1 id="main-title">Never forget to cancel a subscription</h1>
+    <h1 class= "my-4" id="main-title">Never forget to cancel a subscription</h1>
     <%= link_to "Get started", dashboard_path, class: "btn btn-primary btn-lg font-weight-bold" %>
   </div>
  </section>
@@ -12,35 +12,35 @@
   <div class="grouplistpromo">
     <ul id="subs-display-animation">
       <li>
-        <div class="subscription-item">
-          <div class="sub-logo" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(https://www.iconninja.com/files/140/281/107/app-web-home-spotify-image-group-internet-icon.svg)"></div>
-          <div class="sub-info">
-            <h3 class="sub-name margin-sm">Spotify</h3>
-            <p class='sub-next-payment margin-sm'>Next payment: 20/10/2020</p>
+        <div class="subscription-item-dash" style="border: 2px solid #ED6C79; border-left: 8px solid #ED6C79;">
+          <img src="https://res.cloudinary.com/dkyy/image/upload/v1599044092/Logos/spotify_m7gga1.png" alt="">
+          <div class="sub-info-dash text-left">
+            <h3 class="sub-name-dash">Spotify - Individual</h3>
+            <p class='sub-next-payment-dash'>Next payment: 20/10/2020</p>
           </div>
-          <div class="sub-reg-cost"><h3>£6.00</h3></div>
+          <div class="sub-reg-cost"><h3>£9.99</h3></div>
         </div>
       </li>
 
       <li>
-        <div class="subscription-item">
-          <div class="sub-logo" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(https://i.pinimg.com/originals/f6/97/4e/f6974e017d3f6196c4cbe284ee3eaf4e.png)"></div>
-          <div class="sub-info">
-            <h3 class="sub-name margin-sm">Netflix</h3>
-            <p class='sub-next-payment margin-sm'>Next payment: 20/10/2020</p>
+        <div class="subscription-item-dash" style="border: 2px solid #F5A36F; border-left: 8px solid #F5A36F;">
+          <img src="https://res.cloudinary.com/dkyy/image/upload/v1599044078/Logos/adobe_t00xzf.png" alt="">
+          <div class="sub-info-dash text-left">
+            <h3 class="sub-name-dash">Adobe Creative Cloud</h3>
+            <p class='sub-next-payment-dash'>Next payment: 20/10/2020</p>
+          </div>
+          <div class="sub-reg-cost"><h3>£75.85</h3></div>
+        </div>
+      </li>
+
+      <li>
+        <div class="subscription-item-dash" style="border: 2px solid #ED6C79; border-left: 8px solid #ED6C79;">
+          <img src="https://res.cloudinary.com/dkyy/image/upload/v1599043884/Logos/netflix_sszqhg.png" alt="">
+          <div class="sub-info-dash text-left">
+            <h3 class="sub-name-dash">Netflix - Standard</h3>
+            <p class='sub-next-payment-dash'>Next payment: 20/10/2020</p>
           </div>
           <div class="sub-reg-cost"><h3>£8.99</h3></div>
-        </div>
-      </li>
-
-      <li>
-        <div class="subscription-item">
-          <div class="sub-logo" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/052018/untitled-1_282.png?zBgfG0XEfdsPUq33GRuhu6udfY3Yu_rs&itok=39OQ7JCF)"></div>
-          <div class="sub-info">
-            <h3 class="sub-name margin-sm">Amazon Prime</h3>
-            <p class='sub-next-payment margin-sm'>Next payment: 20/10/2020</p>
-          </div>
-          <div class="sub-reg-cost"><h3>£7.99</h3></div>
         </div>
       </li>
 
