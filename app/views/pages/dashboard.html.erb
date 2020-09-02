@@ -5,9 +5,16 @@
   <h1 class="text-left m-0">Dashboard</h1>
 
         <div>
-           <% if @dateMatch %>
+           <% if @date_match %>
            <div class="flash-alert flash-danger alert-item alert-dismissible fade show" role="alert" id="date-today-alert">
-           <span class="mr-3">Hey! 😱 <strong><%= @dateTodayCount %></strong> reminder(s) for today</span>
+           <span class="mr-3">Hey! 😱 <strong><%= @date_today_count %></strong> reminder(s) for today</span>
+           <a data-dismiss="alert" aria-label="Close">
+           <i id="close-alert" class="fas fa-times"></i>
+           </a>
+           </div>
+          <% else %>
+           <div class="flash-alert flash-danger alert-item alert-dismissible fade show" role="alert" id="date-today-alert">
+           <span class="mr-3"> You have no reminders for today 😱 </span>
            <a data-dismiss="alert" aria-label="Close">
            <i id="close-alert" class="fas fa-times"></i>
            </a>
