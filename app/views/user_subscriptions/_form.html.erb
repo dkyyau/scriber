@@ -12,25 +12,24 @@
   <strong><%= f.input :payment_date, as: :date, html5: true, label: "Payment date 💳" %></strong>
   <strong><%= f.input :cost, label: "Cost 💰", placeholder: "£"%></strong>
   <strong><%= f.association :billing_plan, label: "Billing Plan ⏰" %></strong>
-  <p> Would you like to add a reminder? </p>
-<div class="yes btn btn-primary">yes</div>
-<div class="no btn btn-secondary">no</div>
-<div class="form hide" style="height: 200px;">
-   <%= f.simple_fields_for :reminders do |reminder_attributes|%>
-      <%= reminder_attributes.input :date, as: :date, html5: true %>
-        <%= reminder_attributes.input :details %>
-                <% end %>
-                 <div class="d-flex justify-content-around align-items-center">
-
-</div>
-</div>
+    <div class="d-flex justify-content-around align-items-center">
     <div>
-      <%= f.submit "Submit", class: 'btn btn-primary mt-3' %>
+      <p> Would you like to add a reminder? </p>
+    <div class="yes btn btn-primary">yes</div>
+      <div class="no btn btn-secondary">no</div>
+        <div class="form hide" style="height: 200px;">
+          <%= f.simple_fields_for :reminders do |reminder_attributes|%>
+            <%= reminder_attributes.input :date, as: :date, html5: true %>
+              <%= reminder_attributes.input :details %>
+              <% end %>
+          </div>
+      </div>
+        <div>
+          <%= f.submit "Submit", class: 'btn btn-primary mt-3' %>
+        </div>
+      </div>
+      <% end %>
     </div>
-
-  <% end %>
-
-  </div>
 
 
 
