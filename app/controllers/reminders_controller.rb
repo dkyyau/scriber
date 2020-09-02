@@ -14,10 +14,9 @@ class RemindersController < ApplicationController
     @reminder = Reminder.new(reminder_params)
     @user_subscription = UserSubscription.find(params[:user_subscription_id])
     @reminder.user_subscription = @user_subscription
-    if @reminder.save
+    unless @reminder.details == ""
+      @reminder.save
       redirect_to user_subscription_path(@user_subscription)
-    else
-      render 'new'
     end
   end
 
