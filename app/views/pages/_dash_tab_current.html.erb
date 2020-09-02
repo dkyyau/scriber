@@ -9,7 +9,7 @@
 
               <div class="sub-results">
                 <% user_subscriptions.each do |user_subscription| %>
-                    <div class="subscription-item-dash" style="/*border: 1px solid <%= user_subscription.subscription.category.colour %>;*/ border-left: 8px solid <%= user_subscription.subscription.category.colour %>;">
+                    <div class="subscription-item-dash" style="border: 2px solid <%= user_subscription.subscription.category.colour %>; border-left: 8px solid <%= user_subscription.subscription.category.colour %>;">
 
                       <div class="sub-item-overlay">
                         <%=link_to user_subscription_path(user_subscription) do %>
@@ -21,11 +21,13 @@
                         <% end %>
 
                       </div>
-                      <% if user_subscription.subscription.logo.attached? %>
-                        <div class="sub-logo-dash" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('<%= cl_image_path user_subscription.subscription.logo.key, height: 70, width: 70, crop: :lpad %>')"></div>
+                      <% if user_subscription.subscription.logo_url.nil? %>
+                        <div class="sub-logo-dash">
+                          <img src="https://res.cloudinary.com/dkyy/image/upload/v1598968617/Logos/scriber_pe33n6.png" alt="" style="width: 70px; height: 70px;">
+                        </div>
                       <% else %>
                         <div class="sub-logo-dash">
-                          <img src="https://res.cloudinary.com/dkyy/image/upload/v1598619567/scriber_oo8jwh.png" alt="" style="width: 70px; height: 70px;">
+                          <img src="<%= user_subscription.subscription.logo_url %>" alt="" style="width: 70px; height: 70px;">
                         </div>
                       <% end %>
                       <div class="sub-info-dash">
