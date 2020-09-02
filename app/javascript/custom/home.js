@@ -1,4 +1,6 @@
-//banner animation
+
+export const homeAnimation = () => {
+    //banner animation
 const mainTitle = document.getElementById('main-title');
 const creditcard = document.getElementById('creditcard');
 const check = document.getElementById('check');
@@ -7,10 +9,10 @@ const subslist = document.querySelector('.promote');
 const navHome = document.querySelector('.navbar-brand');
 const homeLink = document.querySelector('.home-link');
 
-check.style.display = "none";
-subslist.style.display = "";
-subslist.style.opacity = "0";
 creditcard.classList.add('show-card');
+check.style.display = "none";
+subslist.style.display = "none";
+
 
 const pageLoad = () => {
   subslist.style.display = "none";
@@ -49,5 +51,12 @@ window.onload = function() {
 setTimeout(function() {
   subslist.style.visibility='none';
 }, 17000);
+
+}
+
+
+
+
+
 
 
