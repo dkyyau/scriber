@@ -19,6 +19,7 @@ class UserSubscriptionsController < ApplicationController
   def create
     @user_subscription = UserSubscription.new(user_subscription_params)
     @user_subscription.user = current_user
+
     if @user_subscription.save
       UpdatePaymentJob.set(wait_until: @user_subscription.payment_date.noon).perform_later(@user_subscription)
      redirect_to dashboard_path

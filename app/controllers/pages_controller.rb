@@ -30,11 +30,11 @@ class PagesController < ApplicationController
        @user_reminders << reminder
        @user_reminder_dates << reminder.date
      end
-     @dateTodayCount = 0;
-     @dateMatch = false;
+     @date_today_count = 0;
+     @date_match = false;
      @user_reminder_dates.each do |date|
-     @dateMatch = date == Date.today ? true : false
-     date == Date.today ? @dateTodayCount += 1 : false
+     @date_match = date == Date.today ? true : false
+     date == Date.today ? @date_today_count += 1 : false
      end
     end
 
