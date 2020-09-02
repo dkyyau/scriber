@@ -3,9 +3,21 @@
 
 <div class="container">
   <div class="list-subscription-container">
-    <h1 class="text-center"><%=@user_subscription.subscription.name%></h1>
-     <div class="d-flex justify-content-around">
+    <div class="show-header">
+      <h1><%=@user_subscription.subscription.name%></h1>
       <div>
+        <%= link_to user_subscription_path(@user_subscription), method: :delete, data: { confirm: "Are you sure you want to delete this subscription?" } do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+        <%= link_to edit_user_subscription_path(@user_subscription) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+    </div>
+
+
+    <div class="d-flex justify-content-around mx-3">
+      <div class="subscription-logo">
         <% if @user_subscription.subscription.logo.attached? %>
           <%= cl_image_tag @user_subscription.subscription.logo.key, height: 150, width: 150, crop: :pad %>
         <% else %>
@@ -20,27 +32,24 @@
         <p><strong>Payment date: </strong><%= @user_subscription.payment_date %></p>
         <p><strong>Billing plan:</strong> <%= @user_subscription.billing_plan.name %></p>
         <p><strong>Cost:</strong> £<%= number_with_precision(@user_subscription.cost, precision: 2) %></p>
-
-      <div class= "box">
-        <% @user_subscription.reminders.each do |reminder|%>
-          <div class="reminder-index-item">
-            <p><strong>🔔Reminder:</strong> <%= reminder.date %> </p>
-            <p><%= reminder.details %> </p>
-          </div>
-          <% end %>
-        </div>
-
-
-
       </div>
     </div>
-    <div class="text-right">
-      <%= link_to "Add a reminder", new_user_subscription_reminder_path(@user_subscription), class: 'btn btn-primary btn-sm my-3' %>
+
+    <div class= "reminders-box m-3">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="font-weight-bold">Reminders</h4>
+        <%= link_to new_user_subscription_reminder_path(@user_subscription) do %>
+          Add a reminder <i class="fas fa-plus ml-1"></i>
+        <% end %>
+      </div>
+      
+      <% @user_subscription.reminders.each do |reminder|%>
+          <p>🔔  <strong><%= reminder.date %>:</strong> <%= reminder.details %></p>
+      <% end %>
     </div>
-   <p align="right">
-      <%= link_to "Delete", user_subscription_path(@user_subscription), method: :delete, data: { confirm: "Delete this subscription?" }, class: "btn btn-danger btn-sm ml-2" %>
-      <%= link_to "Edit", edit_user_subscription_path(@user_subscription), class: 'btn btn-primary btn-sm ml-2' %>
-      <%= link_to "Back", dashboard_path, class: 'btn btn-primary btn-sm ml-2' %>
-   <p align="right">
+
+    <div class="mr-3 text-right">
+      <%= link_to "Back", dashboard_path, class: 'btn btn-outline-secondary btn-sm ml-2' %>
+    </div>
   </div>
 </div>
