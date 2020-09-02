@@ -7,7 +7,7 @@
          <%= simple_form_for ([@user_subscription, @reminder]) do |f| %>
             <%= f.input :date, as: :date, html5: true %>
             <%= f.input :details %>
-            <%= f.button :submit %>
+            <%= f.button :submit, class: 'btn btn-primary mt-3' %>
             <div class="text-right">
                     <% end %>
             </div>
