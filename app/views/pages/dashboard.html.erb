@@ -1,7 +1,6 @@
 <div class="dash-container">
 
   <div class="d-flex justify-content-between align-items-center mt-3 mb-4">
-
   <h1 class="text-left m-0">Dashboard</h1>
 
         <div>
@@ -24,7 +23,8 @@
       </div>
 
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-3 col-xl-2" id="tabs-container">
+
+    <div class="col-12 col-lg-3" id="tabs-container">
       <div class="nav flex-column nav-pills tabs-section-buttons" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link active" id="v-pills-current-tab" data-toggle="pill" href="#v-pills-current" role="tab" aria-controls="v-pills-current" aria-selected="true"><i class="far fa-calendar-check"></i>Current subscriptions</a>
         <a class="nav-link" id="v-pills-all-tab" data-toggle="pill" href="#v-pills-all" role="tab" aria-controls="v-pills-all" aria-selected="false"><i class="fas fa-search-dollar"></i>All subscriptions</a>
@@ -33,20 +33,16 @@
       </div>
     </div>
 
-    <div class="col-12 col-lg-9 col-xl-10">
+    <div class="col-12 col-lg-9">
       <div class="tab-content" id="v-pills-tabContent">
 
-        <div class="tab-pane main-dash fade show active" id="v-pills-current" role="tabpanel" aria-labelledby="v-pills-current-tab" style="height: 100%;">
+        <div class="tab-pane fade show active" id="v-pills-current" role="tabpanel" aria-labelledby="v-pills-current-tab" style="height: 100%;">
           <%= render "dash_tab_current", user_subscriptions: @user_subscriptions, subscriptions_current_month: @subscriptions_current_month %>
         </div>
-      </div>
-    </div>
-
-
+      
         <div class="tab-pane fade" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
           <%= render "dash_tab_all", user_subscriptions: @user_subscriptions %>
         </div>
-
 
         <div class="tab-pane fade" id="v-pills-reminders" role="tabpanel" aria-labelledby="v-pills-reminders-tab">
           <%= render "dash_tab_reminders", user_reminders: @user_reminders %>
@@ -55,33 +51,28 @@
         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
           <%= render "dash_tab_profile" %>
         </div>
-      </div>
+
       </div>
     </div>
   </div>
 </div>
 
+
 <script type="text/javascript">
-
    $(document).on("turbolinks:load", function () {
-
     const alertToday = document.getElementById('date-today-alert');
-  const closeAlert = document.getElementById('close-alert');
-  const reminderBell =document.getElementById('reminders-tab');
+    const closeAlert = document.getElementById('close-alert');
+    const reminderBell =document.getElementById('reminders-tab');
 
-    closeAlert.addEventListener('click', ()=>{
-    alertToday.style.visibility="hidden";
-  })
-  alertToday.addEventListener('mouseenter', ()=>{
-    reminderBell.classList.add('bellshakeclass')
-  })
-
-  alertToday.addEventListener('mouseleave', ()=>{
-    reminderBell.classList.remove('bellshakeclass')
-  })
-
-});
-
-
+    closeAlert.addEventListener('click', ()=> {
+      alertToday.style.visibility="hidden";
+    })
+    alertToday.addEventListener('mouseenter', () => {
+      reminderBell.classList.add('bellshakeclass')
+    })
+    alertToday.addEventListener('mouseleave', () => {
+      reminderBell.classList.remove('bellshakeclass')
+    })
+  });
 </script>
 
