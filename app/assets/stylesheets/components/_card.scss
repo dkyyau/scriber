@@ -54,9 +54,13 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  font-size: 24px;
+  padding: 4px;
+  font-size: 20px;
   margin: 0 24px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
