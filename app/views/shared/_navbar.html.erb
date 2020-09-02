@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon border-bottom">
-  <%= link_to root_path, class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand", data: { turbolinks: false } do %>
     <%= image_tag "calendar.png", class: "mr-2 ",id: 'img-logo' %>
     <h1>Scriber</h1>
   <% end %>
@@ -12,7 +12,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link home-link" %>
+          <%= link_to "Home", root_path, class: "nav-link home-link", data: { turbolinks: false }%>
         </li>
         <li class="nav-item">
           <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
