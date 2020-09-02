@@ -16,7 +16,8 @@
   <%= f.association :billing_plan, label: "Billing Plan ⏰" %>
 
     <div class="d-flex justify-content-between align-items-center">
-      <p> Would you like to add a reminder? </p>
+
+     <strong> <p> Would you like to add a reminder? </p></strong>
 
       <div>
         <div class="yes far fa-3x fa-check-circle"></div>
@@ -34,7 +35,8 @@
           </div>
       </div>
 
-     <%= f.submit "Submit", class: 'btn btn-primary mt-3 float-right' %>
+   <div class="submit-button"><%= f.submit "Submit", class: 'btn btn-primary mt-3 float-right' %>
+   </div>
       </div>
         <% end %>
 
