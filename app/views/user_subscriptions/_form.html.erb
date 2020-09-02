@@ -1,22 +1,31 @@
 <div class="subscription-reminder-form">
-<%= simple_form_for(user_subscription) do |f| %>
-   <%= f.association :subscription, collection: Subscription.order('name ASC')%>
+  <%= simple_form_for(user_subscription) do |f| %>
+  <%= f.association :subscription, collection: Subscription.order('name ASC')%>
+
   <div class="form-row">
     <div class="col">
-      <strong><%= f.input :start_date, as: :date, html5: true %></strong>
+      <%= f.input :start_date, as: :date, html5: true %>
     </div>
     <div class="col">
-      <strong><%= f.input :end_date, as: :date, html5: true %></strong>
+      <%= f.input :end_date, as: :date, html5: true %>
     </div>
   </div>
-  <strong><%= f.input :payment_date, as: :date, html5: true, label: "Payment date 💳" %></strong>
-  <strong><%= f.input :cost, label: "Cost 💰", placeholder: "£"%></strong>
-  <strong><%= f.association :billing_plan, label: "Billing Plan ⏰" %></strong>
+
+  <%= f.input :payment_date, as: :date, html5: true, label: "Payment date 💳" %>
+  <%= f.input :cost, label: "Cost 💰", placeholder: "£"%>
+  <%= f.association :billing_plan, label: "Billing Plan ⏰" %>
+
     <div class="d-flex justify-content-between align-items-center">
-    <div>
       <p> Would you like to add a reminder? </p>
-    <div class="yes far fa-3x fa-check-circle"></div>
-      <div class="no far fa-3x fa-times-circle"></div>
+
+      <div>
+        <div class="yes far fa-3x fa-check-circle"></div>
+        <div class="no far fa-3x fa-times-circle"></div>
+      </div>
+
+    </div>
+
+      <div>
         <div class="form hide" style="height: 200px;">
           <%= f.simple_fields_for :reminders do |reminder_attributes|%>
             <%= reminder_attributes.input :date, as: :date, html5: true %>
@@ -24,12 +33,10 @@
               <% end %>
           </div>
       </div>
-        <div>
-          <%= f.submit "Submit", class: 'btn btn-primary mt-3' %>
-        </div>
+
+     <%= f.submit "Submit", class: 'btn btn-primary mt-3 float-right' %>
       </div>
-      <% end %>
-    </div>
+        <% end %>
 
 
 
