@@ -19,6 +19,7 @@
 
 
 
+
 .flash-danger {
   border: 2px solid #921ace;
 }
@@ -180,6 +181,7 @@
 
 #reminders-tab{
   transition: all 1s ease-in-out;
+
 }
 
 .reminder-item:hover p i{
@@ -187,7 +189,7 @@
 }
 
 .tabs-section-buttons:hover i{
-  transition: border 1s ease-in-out;
+
 }
 
 .tabs-section-buttons:hover i{
@@ -200,7 +202,7 @@
   color: #921BCD;
   border: 7px solid purple;
   border-radius: 50%;
-  padding: 4px;
+  padding: 10px;
 }
 
 
