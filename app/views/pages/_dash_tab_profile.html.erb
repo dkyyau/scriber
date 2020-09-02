@@ -1,10 +1,10 @@
 <div class="row justify-content-center">
-            <div class="col-12 col-lg-6">
-              <h2 class="text-center mb-3">Profile</h2>
-                <div class="profile page">
-                  <h3> <i class="far fa-user-circle"></i> <%= (current_user.first_name).capitalize =%> <%= (current_user.last_name).capitalize =%> </h3>
-                     <p><%= current_user.email %></p>
-                     <%=link_to 'Edit Info', edit_user_registration_path, class: 'btn btn-primary' %>
-                     </div>
-            </div>
-          </div>
+  <div class="col-12 col-lg-6">
+    <h2 class="text-center mb-3">Profile</h2>
+    <div class="profile page">
+      <h3><i class="far fa-user-circle"></i> <%= (current_user.first_name).capitalize =%> <%= (current_user.last_name).capitalize =%></h3>
+      <p><%= current_user.email %></p>
+      <%=link_to 'Edit Info', edit_user_registration_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

@@ -6,10 +6,10 @@
       <h1><%=@user_subscription.subscription.name%></h1>
       <div>
         <%= link_to user_subscription_path(@user_subscription), method: :delete, data: { confirm: "Are you sure you want to delete this subscription?" } do %>
-        <i class="fas fa-trash-alt"></i>
+          <i class="fas fa-trash-alt"></i>
         <% end %>
         <%= link_to edit_user_subscription_path(@user_subscription) do %>
-        <i class="fas fa-edit"></i>
+          <i class="fas fa-edit"></i>
         <% end %>
       </div>
     </div>
@@ -46,6 +46,11 @@
       <% end %>
     </div>
     <% end %>
+    <% else %>
+    <%= link_to new_user_subscription_reminder_path(@user_subscription), class:"add-reminder-btn" do %>
+        Add a reminder <i class="fas fa-plus ml-1"></i>
+    <% end %>
+
     <% end %>
 
     <div class="mr-3 text-right">
