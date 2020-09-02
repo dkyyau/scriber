@@ -40,7 +40,6 @@ class PagesController < ApplicationController
 
 
 
-
     @subscriptions_current_month = []
     @user_subscriptions.each do |subscription|
       if subscription.payment_date.mon == Date.today.month
