@@ -21,7 +21,7 @@
         <% if @user_subscription.subscription.logo.attached? %>
           <%= cl_image_tag @user_subscription.subscription.logo.key, height: 150, width: 150, crop: :pad %>
         <% else %>
-          <img src="https://res.cloudinary.com/dkyy/image/upload/v1598619290/scriber_gzphbs.png" style="width: 150px; height: 150px;" />
+            <img src="<%= user_subscription.subscription.logo_url %>" alt="" style="width: 70px; height: 70px;">
         <% end %>
       </div>
 
