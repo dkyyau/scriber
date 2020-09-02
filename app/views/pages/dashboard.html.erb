@@ -28,7 +28,7 @@
 
     <div class="col-12 col-lg-9 col-xl-10">
       <div class="tab-content" id="v-pills-tabContent">
-      
+
         <div class="tab-pane main-dash fade show active" id="v-pills-current" role="tabpanel" aria-labelledby="v-pills-current-tab" style="height: 100%;">
           <%= render "dash_tab_current", user_subscriptions: @user_subscriptions, subscriptions_current_month: @subscriptions_current_month %>
         </div>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-          
+
         </div>
       </div>
       </div>
@@ -55,18 +55,26 @@
 </div>
 
 <script type="text/javascript">
-  const alertToday = document.getElementById('date-today-alert');
+
+   $(document).on("turbolinks:load", function () {
+
+    const alertToday = document.getElementById('date-today-alert');
   const closeAlert = document.getElementById('close-alert');
   const reminderBell =document.getElementById('reminders-tab');
-  closeAlert.addEventListener('click', ()=>{
+
+    closeAlert.addEventListener('click', ()=>{
     alertToday.style.visibility="hidden";
   })
   alertToday.addEventListener('mouseenter', ()=>{
-    reminderBell.classList.toggle('bellshakeclass')
+    reminderBell.classList.add('bellshakeclass')
   })
 
   alertToday.addEventListener('mouseleave', ()=>{
-    reminderBell.classList.toggle('bellshakeclass')
+    reminderBell.classList.remove('bellshakeclass')
   })
+
+});
+
+
 </script>
 
