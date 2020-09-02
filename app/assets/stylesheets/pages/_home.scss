@@ -46,19 +46,18 @@
     margin: 0 auto;
 }
 .subscription-item {
-  height: 100px;
-  width: 100%;
-  border-radius: 8px;
-  background-color: #E7BCF6;
-  background: linear-gradient(90deg, rgba(226, 204, 232,1) 0%, rgba(239,214,252,1) 100%);
-  padding: 16px;
-  display: flex;
-  justify-content: flex-start;
-  color: #353535;
-  font-size: 16px;
-  margin: 8px auto;
-  opacity: 0.9;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    width: 100%;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(248,244,249,1) 0%, rgba(239,214,252,1) 100%);
+    padding: 16px;
+    display: flex;
+    justify-content: flex-start;
+    color: #353535;
+    font-size: 16px;
+    margin: 8px auto;
+    opacity: 0.9;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .sub-logo {
@@ -212,18 +211,3 @@
     width: 80px;
     margin-top: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

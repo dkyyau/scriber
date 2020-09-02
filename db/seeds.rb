@@ -38,17 +38,17 @@ puts "Creating subscriptions..."
 
 # netflix = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Netflix_2015_N_logo.svg/132px-Netflix_2015_N_logo.svg.png")
 
-Subscription.create(name: "Netflix - Basic", description: "One screen at a time, in standard definition.", price: 5.99, category_id: 1)
+Subscription.create(name: "Netflix - Basic", description: "One screen at a time, in standard definition", price: 5.99, category_id: 1)
 # # netflix1.logo.attach(io: netflix, filename: '132px-Netflix_2015_N_logo.svg.png', content_type: 'image/png')
 # # netflix1.save
 
-Subscription.create(name: "Netflix - Standard", description: "2 screens at a time, in HD.", price: 8.99, category_id: 1)
+Subscription.create(name: "Netflix - Standard", description: "2 screens at a time, in HD", price: 8.99, category_id: 1)
 # # netflix2.logo.attach(io: netflix, filename: '132px-Netflix_2015_N_logo.svg.png', content_type: 'image/png')
 # # netflix2.save
 
 Subscription.create(
             name: "Netflix - Premium",
-            description: "4 screens at a time, in HD.",
+            description: "4 screens at a time, in HD",
             price: 11.99,
             category_id: 1
           )
@@ -59,7 +59,7 @@ Subscription.create(
 
 Subscription.create(
           name: "Amazon Prime - Monthly",
-          description: "Services including delivery, streaming music and video.",
+          description: "Services including delivery, streaming music and video",
           price: 7.99,
           category_id: 1
         )
@@ -68,7 +68,7 @@ Subscription.create(
 
 Subscription.create(
           name: "Amazon Prime - Annual",
-          description: "Services including delivery, streaming music and video.",
+          description: "Services including delivery, streaming music and video",
           price: 79.00,
           category_id: 1
         )
@@ -79,7 +79,7 @@ Subscription.create(
 
 Subscription.create(
           name: "Graze",
-          description: "Healthier snacks by post.",
+          description: "Healthier snacks by post",
           price: 4.49,
           category_id: 4
         )
@@ -90,7 +90,7 @@ Subscription.create(
 
 Subscription.create(
               name: "Headspace",
-              description: "Meditation and sleep made simple.",
+              description: "Meditation and sleep made simple",
               price: 9.99,
               category_id: 7
             )
@@ -101,7 +101,7 @@ Subscription.create(
 
 Subscription.create(
             name: "Spotify - Individual",
-            description: "Music and podcast streaming service.",
+            description: "Music and podcast streaming service",
             price: 9.99,
             category_id: 1
             )
@@ -119,7 +119,7 @@ Subscription.create(
 
 Subscription.create(
             name: "Spotify - Family",
-            description: "Music and podcast streaming service.",
+            description: "Music and podcast streaming service",
             price: 14.99,
             category_id: 1
             )
@@ -128,7 +128,7 @@ Subscription.create(
 
 Subscription.create(
             name: "Spotify - Student",
-            description: "Music and podcast streaming service.",
+            description: "Music and podcast streaming service",
             price: 4.99,
             category_id: 1
             )
@@ -201,31 +201,31 @@ puts "Almost there!!!..."
 
 Subscription.create(
   name: "Adobe Creative Cloud - Monthly" ,
-  description: "Subscription service that gives you access to Adobes creative software",
+  description: "Subscription service that gives you access to Adobe's creative software",
   price: 75.85 ,
   category_id: 3)
 
 Subscription.create(
-  name: "Adobe Creative Cloud - Annual plan, Pre-paid" ,
-  description: "Subscription service that gives you access to Adobes creative software",
+  name: "Adobe Creative Cloud - Annual plan, pre-paid" ,
+  description: "Subscription service that gives you access to Adobe's creative software",
   price: 596.83,
   category_id: 3)
 
 Subscription.create(
-  name: "Adobe Creative Cloud - Annual Plan, paid Monthly",
-  description: "Subscription service that gives you access to Adobes creative software",
+  name: "Adobe Creative Cloud - Annual plan, paid monthly",
+  description: "Subscription service that gives you access to Adobe's creative software",
   price: 49.94 ,
   category_id: 3)
 
 Subscription.create(
-  name: "Photoshop - Cloud" ,
-  description: "Create beautiful graphics and photos.",
+  name: "Adobe Photoshop - Cloud" ,
+  description: "Create beautiful graphics and photos",
   price: 19.97 ,
   category_id: 3)
 
 Subscription.create(
-  name: "Illustrator - Cloud",
-  description: "Create beautiful art and illustrations.",
+  name: "Adobe Illustrator - Cloud",
+  description: "Create beautiful art and illustrations",
   price: 19.97 ,
   category_id: 3)
 
@@ -243,56 +243,56 @@ Subscription.create(
 
 Subscription.create(
   name: "Office 365 - Personal",
-  description: "Subscription service that involves latest apps and cloud-based storage",
+  description: "Subscription service with Microsoft's productivity apps and cloud-based storage",
   price: 5.99,
   category_id: 3)
 
 Subscription.create(
   name: "Office 365 - Family",
-  description: "Subscription service that involves latest apps and cloud-based storage",
+  description: "Subscription service with Microsoft's productivity apps and cloud-based storage",
   price: 7.99,
   category_id: 3)
 
 Subscription.create(
   name: "Office 365 - One Time Purchase",
-  description: "Subscription service that involves latest apps and cloud-based storage",
+  description: "One time purchase of Microsoft's productivity apps",
   price: 119.99,
   category_id: 3)
 
 Subscription.create(
-  name: "Xbox live gold",
-  description: "microsofts online gaming subscription used for multiplayer games.",
+  name: "Xbox Live Gold",
+  description: "Microsoft's online gaming subscription for multiplayer games",
   price: 6.99,
   category_id: 1)
 
 Subscription.create(
   name: "Evernote",
-  description: "app designed for, organisation, note-taking, task management and archiving",
+  description: "App for note-taking, organisation, task management and archiving",
   price: 4.99,
   category_id: 8)
 
 Subscription.create(
-  name: "Apple Tv+",
-  description: "movies tv shows streaming",
+  name: "Apple TV+",
+  description: "Apple's video streaming service",
   price: 4.99,
   category_id: 1)
 
 
 Subscription.create(
   name: "Apple Music - Student",
-  description: "Music and video streaming service created by Apple Inc.",
+  description: "Apple's music streaming service",
   price: 4.99,
   category_id: 1)
 
 Subscription.create(
   name: "Apple Music",
-  description: "Music and video streaming service created by Apple Inc. ",
+  description: "Apple's music streaming service",
   price: 9.99,
   category_id: 1)
 
 Subscription.create(
   name: "Abel & Co",
-  description: "Meat Fish dairy vegetables box.",
+  description: "Organic food delivery",
   price: 11.00,
   category_id: 4)
 
