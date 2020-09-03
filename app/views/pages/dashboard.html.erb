@@ -5,7 +5,7 @@
     <div>
         <% if @date_match %>
         <div class="flash-alert flash-danger alert-item alert-dismissible fade show" role="alert" id="date-today-alert">
-          <span class="mr-3">You have <strong><%= @date_today_count %></strong> reminder(s) today 😱</span>
+          <span class="mr-3">You have <strong><%= @date_today_count %></strong> <%= @date_today_count > 1 ? 'reminders' : 'reminder' %> today 😱</span>
           <a data-dismiss="alert" aria-label="Close">
           <i id="close-alert" class="fas fa-times"></i>
           </a>
@@ -38,7 +38,7 @@
         <div class="tab-pane fade show active" id="v-pills-current" role="tabpanel" aria-labelledby="v-pills-current-tab" style="height: 100%;">
           <%= render "dash_tab_current", user_subscriptions: @user_subscriptions, subscriptions_current_month: @subscriptions_current_month %>
         </div>
-      
+
         <div class="tab-pane fade" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
           <%= render "dash_tab_all", user_subscriptions: @user_subscriptions %>
         </div>
