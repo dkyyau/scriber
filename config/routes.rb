@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   post "/admin", to: "pages#send_reminder", as: :send_reminders
 
   resources :user_subscriptions, only: [ :show, :new, :create, :edit, :update, :destroy] do
-    resources :reminders, only: [ :index, :show, :new, :create, :edit, :update ]
+    resources :reminders, only: [ :index, :show, :new, :create, :edit]
   end
-  resources :reminders, only: [:destroy]
+  resources :reminders, only: [:destroy, :update]
 end
 
