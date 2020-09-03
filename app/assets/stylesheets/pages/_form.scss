@@ -1,9 +1,5 @@
 .fa-plus {
-  color: black;
-  opacity: 0.8;
-   position: relative;
-   margin-left: 8px;
-
+  
 }
 
 .submit-button {
@@ -13,8 +9,4 @@
 .yes:hover{
   cursor: pointer;
   color: $purple-med;
-  & .fa-plus {
-  color: $purple-med;
-
-  }
 }
