@@ -23,19 +23,17 @@
 </head>
 
 <body style="background-color: #F8F4F9;">
-  <table style="margin: 8px 0 48px 0;">
-    <div align="center">
-      <img src="https://res.cloudinary.com/dkyy/image/upload/v1599064080/Logos/scriberlogo_aglcuy.png" width="250px">
+  <div align="center">
+    <img src="https://res.cloudinary.com/dkyy/image/upload/v1599064080/Logos/scriberlogo_aglcuy.png" width="250px">
+  </div>
+  <div class="email-container">
+    <h4 align="right"><%= @date.strftime("%e %B, %Y") %></h4>
+    <h4>Hi <%= @user.first_name %>,</h4>
+    <p>Here is your reminder for <em><%= @reminder.user_subscription.subscription.name %></em>:</p>
+    <p>Reminder notes:</p>
+    <div class=details>
+      <%= @reminder.details %>
     </div>
-    <div class="email-container">
-      <h4 align="right"><%= @date.strftime("%e %B, %Y") %></h4>
-      <h4>Hi <%= @user.first_name %>,</h4>
-      <p>Here is your reminder for <em><%= @reminder.user_subscription.subscription.name %></em>:</p>
-      <p>Reminder notes:</p>
-      <div class=details>
-        <%= @reminder.details %>
-      </div>
-      <p>With love from the <strong>Scriber</strong> team 💜</p>
-    </div>
-  </table>
+    <p>With love from the <strong>Scriber</strong> team 💜</p>
+  </div>
 </body>
