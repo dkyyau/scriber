@@ -1,9 +1,9 @@
 .footer {
-  background: #c69ddb;
+  background: #d3b7e2;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 70px;
   padding: 0px 40px;
   color: rgba(0,0,0,0.3);
 }
@@ -28,6 +28,7 @@
 .footer-copyright {
   color: black;
   opacity: 0.4;
+  font-family: "Pacifico", "Helvetica", "sans-serif";
 }
 
 .page-container{
