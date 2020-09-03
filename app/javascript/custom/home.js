@@ -38,6 +38,8 @@ const pageLoad = () => {
   }, 8000);
 };
 
+
+
 const clearList = () => {
   subslist.style.display = "none";
   subslist.visibility = "hidden";
@@ -51,8 +53,14 @@ window.onload = function() {
 setTimeout(function() {
   subslist.style.visibility='none';
 }, 17000);
+setTimeout(function() {
+  location.reload();
+}, 18000);
 
 }
+
+
+
 
 
 
