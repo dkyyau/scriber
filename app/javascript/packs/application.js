@@ -25,6 +25,9 @@ require("channels")
 // External imports
 import "bootstrap";
 import {homeAnimation} from "../custom/home";
+import {sliceSize} from "../custom/profile";
+import {addSlice} from "../custom/profile";
+import {iterateSlices} from "../custom/profile";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initSelect2 } from '../components/init_select2';

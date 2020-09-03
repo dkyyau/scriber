@@ -1,0 +1,77 @@
+<% category_hash={
+  Entertainment: 0,
+  Cloudstorage: 0,
+  Software: 0,
+  Foodanddrink: 0,
+  Beauty: 0,
+  Phone: 0,
+  Health: 0,
+  Utilities: 0
+} %>
+<% @user_subscriptions.each do |sub| %>
+  <%case sub.subscription.category.id %>
+<%when 1 %>
+ <% category_hash[:Entertainment] += 1 %>
+ <%when 2 %>
+ <% category_hash[:Cloudstorage] += 1 %>
+ <%when 3 %>
+ <% category_hash[:Software] += 1 %>
+ <%when 4 %>
+ <% category_hash[:Foodanddrink] += 1 %>
+ <%when 5 %>
+ <% category_hash[:Beauty] += 1 %>
+ <%when 6 %>
+ <% category_hash[:Phone] += 1 %>
+ <%when 7 %>
+ <% category_hash[:Health] += 1 %>
+ <%when 8 %>
+ <% category_hash[:Utilities] += 1 %>
+<% else%>
+  <% "" %>
+<% end %>
+<% end  %>
+
+
+<section class="pi-chart">
+    <div class="pieID pie">
+
+    </div>
+    <ul class="pieID legend">
+      <li>
+        <em>Entertainment</em>
+        <span><%= category_hash[:Entertainment]%></span>
+      </li>
+      <li>
+        <em>Cloud storage</em>
+        <span><%= category_hash[:Cloudstorage] %></span>
+      </li>
+      <li>
+        <em>Software</em>
+        <span><%= category_hash[:Software]%></span>
+      </li>
+      <li>
+        <em>Food and drink</em>
+        <span><%= category_hash[:Foodanddrink] %></span>
+      </li>
+      <li>
+        <em>Beauty</em>
+        <span><%= category_hash[:Beauty]%></span>
+      </li>
+
+      <li>
+        <em>Phone</em>
+        <span><%= category_hash[:Phone]%></span>
+      </li>
+
+      <li>
+        <em>Health</em>
+        <span><%= category_hash[:Health]%></span>
+      </li>
+
+      <li>
+        <em>Utilities</em>
+        <span><%= category_hash[:Utilities]%></span>
+      </li>
+    </ul>
+  </section>
+  <section>
