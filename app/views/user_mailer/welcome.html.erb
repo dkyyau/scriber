@@ -7,7 +7,7 @@
       box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
       padding: 16px 32px;
       border-radius: 4px;
-      margin: 8px auto 48px auto;
+      margin: 8px auto;
       font-size: 18px;
     }
 
@@ -35,7 +35,7 @@
   <div align="center">
     <img src="https://res.cloudinary.com/dkyy/image/upload/v1599064080/Logos/scriberlogo_aglcuy.png" style="width: 250px;">
   </div>
-  <div class="email-container">
+  <div class="email-container" style="margin-bottom: 48px;">
     <h4 align="right"><%= @date.strftime("%e %B, %Y") %></h5>
     <h4>Welcome, <%= @user.first_name %>!</h4>
     <p>Thank you for choosing <strong>Scriber!</strong></p>

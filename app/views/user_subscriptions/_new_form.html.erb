@@ -15,14 +15,14 @@
     <%= f.association :billing_plan, label: "Billing Plan ⏰" %>
 
 
-    <div class=" yes d-flex align-items-center">
-      <strong><p class="m-0 reminder-text"> Add Reminder</p></strong>
-        <i class="fas fa-1x fa-plus"></i>
+    <div class="yes d-flex align-items-center">
+      <strong><p class="m-0 reminder-text"> Add Reminder </p></strong>
+      <p class=" m-0 ml-1">🔔</p>
        <!--  <div class="no far fa-3x fa-times-circle ml-2"></div> -->
     </div>
 
 
-    <div class="reminder-form hide" style="height: 200px;">
+    <div class="mt-3 reminder-form hide" style="height: 200px;">
       <%= f.simple_fields_for :reminders do |reminder_attributes|%>
         <%= reminder_attributes.input :date, as: :date, html5: true %>
         <%= reminder_attributes.input :details %>

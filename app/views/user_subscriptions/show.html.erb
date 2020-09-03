@@ -15,8 +15,8 @@
     </div>
 
 
-    <div class="d-flex justify-content-around mx-3">
-      <div class="subscription-logo">
+    <div class="d-flex justify-content-start">
+      <div class="subscription-logo pl-5">
         <% if @user_subscription.subscription.logo_url.nil? %>
           <img src="https://res.cloudinary.com/dkyy/image/upload/v1598968617/Logos/scriber_pe33n6.png" alt="">
         <% else %>
@@ -24,13 +24,14 @@
         <% end %>
       </div>
 
-      <div>
+      <div class="pl-5">
         <p><b>Subscription details:</b> <i><%= @user_subscription.subscription.description %></i></p>
         <p><strong>Start date:</strong> <%= @user_subscription.start_date %></p>
         <p><strong>End date: </strong><%= @user_subscription.end_date %></p>
         <p><strong>Payment date: </strong><%= @user_subscription.payment_date %></p>
         <p><strong>Billing plan:</strong> <%= @user_subscription.billing_plan.name %></p>
         <p><strong>Cost:</strong> £<%= number_with_precision(@user_subscription.cost, precision: 2) %></p>
+        <div class="d-flex"><p><strong>Category: </strong></p><p class="ml-1" style="color: <%= @user_subscription.subscription.category.colour %>;"><%= @user_subscription.subscription.category.name %></p></div>
       </div>
     </div>
 
@@ -38,9 +39,11 @@
       <div class= "reminders-box m-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h4 class="font-weight-bold">Reminders</h4>
-          <%= link_to new_user_subscription_reminder_path(@user_subscription), class:"add-reminder-btn" do %>
-            Add reminder <i class="fas fa-plus ml-1"></i>
-          <% end %>
+          <div class="add-reminder-btn">
+            <%= link_to new_user_subscription_reminder_path(@user_subscription) do %>
+              Add reminder <i class="fas fa-plus ml-1"></i>
+            <% end %>
+          </div>
         </div>
         <% @user_subscription.reminders.each do |reminder|%>
           <div class="reminder-box-item">
