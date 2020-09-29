@@ -14,7 +14,7 @@
     <% end %>
 
     <div class="sub-results">
-      <% user_subscriptions.each do |user_subscription| %>
+      <% search_results.each do |user_subscription| %>
         <div class="subscription-item-dash" style="border: 1px solid <%= user_subscription.subscription.category.colour %>; border-left: 8px solid <%= user_subscription.subscription.category.colour %>;">
           
           <div class="sub-item-overlay">

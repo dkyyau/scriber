@@ -1,4 +1,5 @@
 class RemindersController < ApplicationController
+  before_action :set_reminder, only: [:edit, :update, :destroy]
 
   def index
     @reminders = Reminder.all
@@ -21,22 +22,23 @@ class RemindersController < ApplicationController
   end
 
   def edit
-    @reminder = Reminder.find(params[:id])
   end
 
   def update
-    @reminder = Reminder.find(params[:id])
     @reminder.update(reminder_params)
     redirect_to user_subscription_path(@reminder.user_subscription)
   end
 
   def destroy
-    @reminder = Reminder.find(params[:id])
     @reminder.destroy
     redirect_to user_subscription_path(@reminder.user_subscription)
   end
 
   private
+
+  def set_reminder
+    @reminder = Reminder.find(params[:id])
+  end
 
   def reminder_params
     params.require(:reminder).permit(:date, :details)
